@@ -4,8 +4,18 @@
 # General Public License, v.3.0. If a copy of the GPL was not distributed with this
 # file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html.
 
+import time
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
+
+
+template = """
+Thanks for Using 🄲🄾🄳🄴🅇
+            
+<code>STRING_SESSION</code>: <code>{}</code>
+
+⚠️ <b>Please be carefull to pass this value to third parties</b>"""
+
 
 print(
     """
@@ -18,6 +28,7 @@ print(
 |  $$$$$$/|  $$$$$$/|  $$$$$$$|  $$$$$$$ /$$/\  $$
  \______/  \______/  \_______/ \_______/|__/  \__/"""
 )
+print("")
 print("""Telethon String Generator""")
 print("")
 API_KEY = "1273127"
@@ -28,14 +39,17 @@ while True:
         with TelegramClient(StringSession(), API_KEY, API_HASH) as client:
             print("")
             session = client.session.save()
-            client.send_message("me", f"`{session}`")
+            saved_messages_template = "Telethon String Session" + template.format(session)
+            print("\nGenerating String Session.\nPlease wait....")
+            client.send_message("me", saved_message_template, parse_mode="html")
+            time.sleep(1)
             print(
                 "Your Telethon String session has been successfully stored in your telegram, Please check your Telegram Saved Messages"
             )
             print("")
     except:
         print("")
-        print("Wrong phone number \n make sure its with correct  country code")
+        print("Wrong phone number \n make sure its with correct country code")
         print("")
         continue
     break

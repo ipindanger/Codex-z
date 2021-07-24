@@ -72,7 +72,7 @@ async def restart_script(client: TelegramClient, codex):
     except Exception as e:
         LOGS.error(e)
     try:
-        add_to_collectionlist("restart_update", [codex.chat_id, codex.id])
+        add_to_collectionlist("restart_update", [xedoc.chat_id, xedoc.id])
     except Exception as e:
         LOGS.error(e)
     executable = sys.executable.replace(" ", "\\ ")

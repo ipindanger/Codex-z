@@ -57,7 +57,7 @@
       "required": false
     },
     "UPSTREAM_REPO": {
-      "description": "Use either goodcat or badcat .if you need custom deploy then type your git repo link",
+      "description": "if you need custom deploy then type your git repo link",
       "value": "Codex",
       "required": false
     }

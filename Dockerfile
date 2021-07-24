@@ -10,6 +10,8 @@ RUN pip3 install -U -r requirements.txt
 # ENV
 ENV PATH="/home/usercodex/bin:$PATH"
 
+RUN chmod 777 /home/Codex \
+    && mkdir /home/Codex/bin/
 # Workdir for bash
 WORKDIR /home/Codex
 

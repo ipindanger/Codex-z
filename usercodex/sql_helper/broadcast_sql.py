@@ -74,7 +74,7 @@ def del_keyword_broadcastlist(keywoard):
     with CODBROADCAST_INSERTION_LOCK:
         broadcast_group = (
             SESSION.query(CatBroadcast.keywoard)
-            .filter(CatBroadcast.keywoard == keywoard)
+            .filter(CodBroadcast.keywoard == keywoard)
             .delete()
         )
         BROADCAST_SQL_.BROADCAST_CHANNELS.pop(keywoard)
@@ -87,7 +87,7 @@ def get_chat_broadcastlist(keywoard):
 
 def get_broadcastlist_chats():
     try:
-        chats = SESSION.query(CatBroadcast.keywoard).distinct().all()
+        chats = SESSION.query(CodBroadcast.keywoard).distinct().all()
         return [i[0] for i in chats]
     finally:
         SESSION.close()
@@ -95,7 +95,7 @@ def get_broadcastlist_chats():
 
 def num_broadcastlist():
     try:
-        return SESSION.query(CatBroadcast).count()
+        return SESSION.query(CodBroadcast).count()
     finally:
         SESSION.close()
 

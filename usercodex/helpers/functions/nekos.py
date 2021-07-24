@@ -56,8 +56,8 @@ async def kannagen(text):
         f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
     ).json()
     xedoc = r.get("message")
-    url(xedoc)
-    if not caturl:
+    codurl = url(xedoc)
+    if not codurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(xedoc).content)

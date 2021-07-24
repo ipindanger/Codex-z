@@ -8,7 +8,7 @@ from pathlib import Path
 import requests
 from telethon import Button, functions, types, utils
 
-from userbot import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
+from usercodex import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
 from ..core.logger import logging
@@ -34,7 +34,7 @@ async def setup_bot():
         await codex.connect()
         config = await codex(functions.help.GetConfigRequest())
         for option in config.dc_options:
-            if option.ip_address == catub.session.server_address:
+            if option.ip_address == codex.session.server_address:
                 if codex.session.dc_id != option.id:
                     LOGS.warning(
                         f"Fixed DC ID in session from {codex.session.dc_id}"
@@ -46,7 +46,7 @@ async def setup_bot():
         bot_details = await codex.tgbot.get_me()
         Config.TG_BOT_USERNAME = f"@{bot_details.username}"
         # await codex.start(bot_token=Config.TG_BOT_USERNAME)
-        codex.me = await catub.get_me()
+        codex.me = await codex.get_me()
         codex.uid = codex.tgbot.uid = utils.get_peer_id(codex.me)
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(codex.me)
@@ -81,7 +81,7 @@ async def startupmessage():
         if msg_details:
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**Ok Bot is Back and Alive.**"
+            text = message.text + "\n\n**Ok Codex is Back and Alive.**"
             await codex.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await codex.send_message(
@@ -110,7 +110,7 @@ async def ipchange():
         delgvar("ipaddress")
         LOGS.info("Ip Change detected")
         try:
-            await catub.disconnect()
+            await codex.disconnect()
         except (ConnectionError, CancelledError):
             pass
         return "ip change"
@@ -208,7 +208,7 @@ async def verifyLoggerGroup():
     else:
         descript = "Don't delete this group or change to group(If you change group all your previous snips, welcome will be lost.)"
         _, groupid = await create_supergroup(
-            "CatUserbot BotLog Group", catub, Config.TG_BOT_USERNAME, descript
+            "CodexUserbot BotLog Group", codex, Config.TG_BOT_USERNAME, descript
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print(

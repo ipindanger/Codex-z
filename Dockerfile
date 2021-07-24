@@ -8,9 +8,9 @@ WORKDIR /root/usercodex
 # Install requirements
 RUN pip3 install -U -r requirements.txt
 # ENV
-ENV PATH="/home/userbot/bin:$PATH"
+ENV PATH="/home/usercodex/bin:$PATH"
 
 # Workdir for bash
-WORKDIR /home/usercodex
+WORKDIR /home/Codex
 
 CMD ["bash","./resources/starting_up/getstart.sh"]

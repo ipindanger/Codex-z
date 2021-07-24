@@ -10,7 +10,6 @@ from ..Config import Config
 from ..core.data import _sudousers_list, blacklist_chats_list
 from ..core.events import MessageEdited, NewMessage
 from ..core.logger import logging
-from ..core.session import codex
 from ..helpers.utils.format import paste_message
 from ..helpers.utils.utils import runcmd
 from ..sql_helper.globals import gvarstatus

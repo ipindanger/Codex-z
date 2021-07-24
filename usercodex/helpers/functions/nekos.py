@@ -11,7 +11,9 @@ async def fakegs(search, result):
     drawing = ImageDraw.Draw(img)
     blue = (0, 0, 255)
     black = (0, 0, 0)
-    font1 = ImageFont.truetype("usercodex/helpers/styles/ProductSans-BoldItalic.ttf", 20)
+    font1 = ImageFont.truetype(
+        "usercodex/helpers/styles/ProductSans-BoldItalic.ttf", 20
+    )
     font2 = ImageFont.truetype("usercodex/helpers/styles/ProductSans-Light.ttf", 23)
     drawing.text((450, 258), result, fill=blue, font=font1)
     drawing.text((270, 37), search, fill=black, font=font2)
@@ -54,7 +56,7 @@ async def kannagen(text):
         f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
     ).json()
     xedoc = r.get("message")
-    codurl = url(xedoc)
+    url(xedoc)
     if not caturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:

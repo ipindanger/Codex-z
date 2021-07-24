@@ -8,7 +8,6 @@
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
 
-
 print(
     """
   /$$$$$$                  /$$                    
@@ -31,7 +30,10 @@ while True:
         with TelegramClient(StringSession(), API_KEY, API_HASH) as client:
             print("")
             session = client.session.save()
-            client.send_message("me", f"Thanks for Using 🄲🄾🄳🄴🅇\n\n `{session}` \n\n⚠️ Please be carefull to pass this value to third parties")
+            client.send_message(
+                "me",
+                f"Thanks for Using 🄲🄾🄳🄴🅇\n\n `{session}` \n\n⚠️ Please be carefull to pass this value to third parties",
+            )
             print(
                 "Your Telethon String session has been successfully stored in your telegram, Please check your Telegram Saved Messages"
             )

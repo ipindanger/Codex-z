@@ -237,6 +237,7 @@ def paginate_help(
         ]
     return pairs
 
+
 @codex.tgbot.on(InlineQuery)
 async def inline_handler(event):  # sourcery no-metrics
     builder = event.builder
@@ -538,6 +539,7 @@ async def inline_handler(event):  # sourcery no-metrics
             ),
         )
         await event.answer([result] if result else None)
+
 
 @codex.tgbot.on(CallbackQuery(data=re.compile(b"close")))
 @check_owner

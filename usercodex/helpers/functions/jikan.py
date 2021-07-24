@@ -277,6 +277,7 @@ def get_anime_manga(mal_id, search_type, _user_id):  # sourcery no-metrics
         )
     return caption, image
 
+
 def get_poster(query):
     url_enc_name = query.replace(" ", "+")
     # Searching for query list in imdb

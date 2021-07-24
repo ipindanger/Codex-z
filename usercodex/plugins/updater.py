@@ -1,4 +1,3 @@
-
 import asyncio
 import os
 import sys
@@ -13,7 +12,7 @@ from usercodex import HEROKU_APP, UPSTREAM_REPO_URL, codex
 
 from ..Config import Config
 from ..core.logger import logging
-from ..core.managers import edit_delete, edit_or_reply
+from ..core.managers import edit_or_reply
 from ..sql_helper.global_collection import (
     add_to_collectionlist,
     del_keyword_collectionlist,
@@ -256,21 +255,16 @@ async def upstream(event):
     # Special case for deploy
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`Codex is`  **up-to-date**  `with`  "
-            f"**{UPSTREAM_REPO_BRANCH}**\n"
+            "\n`Codex is`  **up-to-date**  `with`  " f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond(
-            f"do `{cmdhd}update deploy` to update the codex"
-        )
+        return await event.respond(f"do `{cmdhd}update deploy` to update the codex")
 
     if force_update:
-        await event.edit(
-            "`Force-Syncing to latest stable bot code, please wait...`"
-        )
+        await event.edit("`Force-Syncing to latest stable bot code, please wait...`")
     if conf == "-pull":
         await event.edit("`Updating codex, please wait...`")
         await pull(event, repo, ups_rem, ac_br)

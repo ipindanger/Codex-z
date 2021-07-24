@@ -264,14 +264,18 @@ async def _(event):  # sourcery no-metrics
         loadcmds = []
         for cmd in input_str:
             if cmd not in CMD_INFO:
-                errors += f"`{cmd}` __There is no such command in your CodexUserbot__.\n"
+                errors += (
+                    f"`{cmd}` __There is no such command in your CodexUserbot__.\n"
+                )
             elif cmd in sudocmds:
                 errors += f"`{cmd}` __Is already enabled for sudo users__.\n"
             else:
                 loadcmds.append(cmd)
     for cmd in loadcmds:
         sqllist.add_to_list("sudo_enabled_cmds", cmd)
-    result = f"__Successfully enabled __ `{len(loadcmds)}` __ for CodexUserbot sudo.__\n"
+    result = (
+        f"__Successfully enabled __ `{len(loadcmds)}` __ for CodexUserbot sudo.__\n"
+    )
     output = (
         result + "**Bot is reloading to apply the changes. Please wait for a minute**\n"
     )
@@ -353,7 +357,9 @@ async def _(event):  # sourcery no-metrics
         flagcmds = []
         for cmd in input_str:
             if cmd not in CMD_INFO:
-                errors += f"`{cmd}` __There is no such command in your CodexUserbot__.\n"
+                errors += (
+                    f"`{cmd}` __There is no such command in your CodexUserbot__.\n"
+                )
             elif cmd not in sudocmds:
                 errors += f"`{cmd}` __Is already disabled for sudo users__.\n"
             else:

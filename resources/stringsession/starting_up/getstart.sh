@@ -15,4 +15,4 @@ echo "
              Thank's for using @Codex
 "
 
-python3 -m userbot
+python3 -m usercodex

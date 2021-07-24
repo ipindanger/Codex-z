@@ -106,7 +106,7 @@ async def pull(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    sandy = await event.edit(
+    xedoc = await event.edit(
         "`Successfully Updated!\n" "Bot is restarting... Wait for a minute!`"
     )
     await event.client.reload(xedoc)
@@ -134,7 +134,7 @@ async def push(event, repo, ups_rem, ac_br, txt):
             f"{txt}\n" "`Invalid Heroku credentials for deploying userbot dyno.`"
         )
         return repo.__del__()
-    sandy = await event.edit(
+    xedoc = await event.edit(
         "`Userbot dyno build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
     )
     try:

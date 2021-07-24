@@ -18,7 +18,7 @@ LOGS = logging.getLogger("CodexUserbot")
 bot = codex
 
 StartTime = time.time()
-codversion = "3.0.3"
+codversion = "0.01"
 
 if Config.UPSTREAM_REPO == "Codex":
     UPSTREAM_REPO_URL = "https://github.com/Codex51/Codex"

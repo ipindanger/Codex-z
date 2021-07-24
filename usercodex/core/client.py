@@ -302,6 +302,6 @@ CodexClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    CatUserBotClient.send_message = send_message
-    CatUserBotClient.send_file = send_file
-    CatUserBotClient.edit_message = edit_message
+    CodexClient.send_message = send_message
+    CodexClient.send_file = send_file
+    CodexClient.edit_message = edit_message

@@ -19,10 +19,10 @@ from . import BASE, SESSION
 
 class Gdrive(BASE):
     __tablename__ = "codgdrive"
-    cat = Column(String(50), primary_key=True)
+    cod = Column(String(50), primary_key=True)
 
     def __init__(self, cod):
-        self.cat = cod
+        self.cod = cod
 
 
 Gdrive.__table__.create(checkfirst=True)

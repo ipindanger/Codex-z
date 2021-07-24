@@ -19,7 +19,7 @@ class CodBroadcast(BASE):
 
     def __eq__(self, other):
         return bool(
-            isinstance(other, CatBroadcast)
+            isinstance(other, CodBroadcast)
             and self.keywoard == other.keywoard
             and self.group_id == other.group_id
         )

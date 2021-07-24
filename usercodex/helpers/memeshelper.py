@@ -368,7 +368,7 @@ RUNSREACTS = [
     "Here, take this ring and head to Mordor while you're at it.",
     "Legend has it, they're still running...",
     "Unlike Harry Potter, your parents can't protect you from me.",
-    "Fear leads to anger. Anger leads to hate. Hate leads to suffering. If you keep running in fear, you might "
+    "Fear leads to anger. Anger leads to hate. Hate leads to suffering. If you keep running in fear, you might",
     "be the next Vader.",
     "Keep it up, not sure we want you here anyway.",
     "You're a wiza- Oh. Wait. You're not Harry, keep moving.",
@@ -895,3 +895,4 @@ FACEREACTS = [
         r"¯\(°_o)/¯",
         "(｡◕‿◕｡)",
     ],
+]

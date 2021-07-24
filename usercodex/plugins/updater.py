@@ -190,8 +190,8 @@ async def push(event, repo, ups_rem, ac_br, txt):
         "header": "To update userbot.",
         "description": "I recommend you to do update deploy atlest once a week.",
         "options": {
-            "now": "Will update bot but requirements doesnt update.",
-            "deploy": "Bot will update completly with requirements also.",
+            "-pull": "Will update bot but requirements doesnt update.",
+            "-push": "Bot will update completly with requirements also.",
         },
         "usage": [
             "{tr}update",

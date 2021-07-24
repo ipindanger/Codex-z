@@ -13,6 +13,7 @@ from ..core.logger import logging
 from ..helpers.utils.format import paste_message
 from ..helpers.utils.utils import runcmd
 from ..sql_helper.globals import gvarstatus
+from ..core.session import codex
 
 LOGS = logging.getLogger(__name__)
 
@@ -218,8 +219,8 @@ def register(**args):
 
     def decorator(func):
         if not disable_edited:
-            catub.add_event_handler(func, MessageEdited(**args))
-        catub.add_event_handler(func, NewMessage(**args))
+            codex.add_event_handler(func, MessageEdited(**args))
+        codex.add_event_handler(func, NewMessage(**args))
         try:
             LOAD_PLUG[file_test].append(func)
         except Exception:
@@ -275,8 +276,8 @@ def command(**args):
 
     def decorator(func):
         if allow_edited_updates:
-            catub.add_event_handler(func, MessageEdited(**args))
-        catub.add_event_handler(func, NewMessage(**args))
+            codex.add_event_handler(func, MessageEdited(**args))
+        codex.add_event_handler(func, NewMessage(**args))
         try:
             LOAD_PLUG[file_test].append(func)
         except BaseException:

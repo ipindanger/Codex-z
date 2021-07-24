@@ -12,8 +12,8 @@ __license__ = "BSD-3-Clause License"
 __author__ = "Codex <https://github.com/Codex51/Codex>"
 __copyright__ = "Copyright (C) 2021, " + __author__
 
-catub.version = __version__
-catub.tgbot.version = __version__
+codex.version = __version__
+codex.tgbot.version = __version__
 LOGS = logging.getLogger("CodexUserbot")
 bot = codex
 

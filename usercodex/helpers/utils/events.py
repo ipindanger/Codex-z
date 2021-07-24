@@ -78,7 +78,7 @@ async def get_user_from_event(
     return None, None
 
 
-async def checking(catub):
+async def checking(codex):
     cod_c = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     try:
         cod_channel = Get(cod_c)

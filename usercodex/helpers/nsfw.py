@@ -106,7 +106,7 @@ hemtai = [
 
 
 async def importent(event):
-    if str(event.chat_id) in cat:
+    if str(event.chat_id) in cod:
         await edit_or_reply(event, "**Get The Fuck Out**")
         await event.client.kick_participant(event.chat_id, "me")
         return True

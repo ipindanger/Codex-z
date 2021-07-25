@@ -1,3 +1,1 @@
-build:
-  docker:
-      worker: Dockerfile
+worker: bash /resources/starting_up/getstart

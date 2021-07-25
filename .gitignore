@@ -104,6 +104,3 @@ config.py
 
 # mypy
 .mypy_cache/
-
-# bin home
-bin/*

@@ -24,7 +24,7 @@ cmdhr = Config.COMMAND_HAND_LER
 
 try:
     LOGS.info("Starting Userbot")
-    catub.loop.run_until_complete(setup_bot())
+    codex.loop.run_until_complete(setup_bot())
     LOGS.info("Telegram Bot Startup Completed")
 except Exception as e:
     LOGS.error(f"{str(e)}")

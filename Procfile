@@ -1,1 +1,1 @@
-worker: bash /resources/stringsession/starting_up/getstart
+worker: python3 -m usercodex

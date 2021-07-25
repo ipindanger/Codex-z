@@ -71,7 +71,7 @@ async def check_bot_started_users(user, event):
 )
 async def bot_start(event):
     chat = await event.get_chat()
-    user = await catub.get_me()
+    user = await codex.get_me()
     if check_is_black_list(chat.id):
         return
     reply_to = await reply_id(event)
@@ -407,7 +407,7 @@ async def send_flood_alert(user_) -> None:
         FloodConfig.ALERT[user_.id]["fa_id"] = fa_msg.id
 
 
-@catub.tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
+@codex.tgbot.on(CallbackQuery(data=re.compile(b"bot_pm_ban_([0-9]+)")))
 @check_owner
 async def bot_pm_ban_cb(c_q: CallbackQuery):
     user_id = int(c_q.pattern_match.group(1))

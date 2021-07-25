@@ -6,7 +6,7 @@ RUN git clone -b master https://github.com/Codex51/Codex /home/usercodex \
     && chmod 777 /home/usercodex/ \
     && mkdir /home/usercodex/bin/
 
-COPY ./sample_config.py ./exampleconfig.py
+COPY ./sample_config.py ./exampleconfig.py /home/usercodex/
 
 # Path
 ENV PATH="/home/usercodex/bin:$PATH"

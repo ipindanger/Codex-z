@@ -1,1 +1,1 @@
-worker: bash resources/starting_up/getstart.sh
+run: python3 -m usercodex

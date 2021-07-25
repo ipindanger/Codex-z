@@ -57,7 +57,7 @@ def load_module(shortname, plugin_path=None):
         mod.borg = codex
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["userbot.plugins." + shortname] = mod
+        sys.modules["usercodex.plugins." + shortname] = mod
         LOGS.info("Successfully imported " + shortname)
 
 

@@ -1,1 +1,3 @@
-worker: python3 -m usercodex
+build:
+  docker:
+      worker: Dockerfile

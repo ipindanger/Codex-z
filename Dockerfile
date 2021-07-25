@@ -1,14 +1,17 @@
 # Using python slim-buster
 FROM codex51/codex:buster
 
-# Clone
-RUN git clone https://github.com/Codex51/Codex.git /root/usercodex
-# working directory 
-WORKDIR /root/usercodex
+# Clone branch
+RUN git clone -b master https://github.com/Codex51/Codex /home/usercodex \
+    && chmod 777 /home/usercodex/ \
+    && mkdir /home/usercodex/bin/
 
-# Install requirements
-RUN pip3 install -U -r requirements.txt
+COPY ./sample_config.py ./exampleconfig.py
 
+# Path
 ENV PATH="/home/usercodex/bin:$PATH"
 
-CMD ["python3","-m","usercodex"]
+# working directory 
+WORKDIR /home/usercodex
+
+CMD ["bash","./resources/starting_up/getstart.sh"]

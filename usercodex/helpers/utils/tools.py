@@ -26,14 +26,14 @@ async def media_to_pic(event, reply, noedits=False):
     ]:
         return event, None
     if not noedits:
-        catevent = await edit_or_reply(
+        codevent = await edit_or_reply(
             event, f"`Transfiguration Time! Converting to ....`"
         )
     else:
         codevent = event
     codmedia = None
     codfile = os.path.join("./temp/", "meme.png")
-    if os.path.exists(catfile):
+    if os.path.exists(codfile):
         os.remove(codfile)
     if mediatype == "Photo":
         codmedia = await reply.download_media(file="./temp")

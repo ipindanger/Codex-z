@@ -11,4 +11,4 @@ RUN pip3 install -U -r requirements.txt
 
 ENV PATH="/home/usercodex/bin:$PATH"
 
-CMD ["python3","-m","usercodex"]
+CMD ["python3","-m","./run"]

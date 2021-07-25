@@ -33,7 +33,7 @@ name_dl = (
 
 async def yt_search(cod):
     try:
-        cat = urllib.parse.quote(cod)
+        urllib.parse.quote(cod)
         html = urllib.request.urlopen(
             "https://www.youtube.com/results?search_query=" + cod
         )

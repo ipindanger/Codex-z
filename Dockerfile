@@ -3,7 +3,7 @@ FROM codex51/codex:buster
 
 # Clone
 RUN git clone https://github.com/Codex51/Codex.git /root/usercodex
-#working directory 
+# working directory 
 WORKDIR /root/usercodex
 
 # Install requirements

@@ -5,7 +5,7 @@ from sqlalchemy import Column, PickleType, UnicodeText, distinct, func
 from . import BASE, SESSION
 
 
-class Cat_GlobalCollection(BASE):
+class Cod_GlobalCollection(BASE):
     __tablename__ = "cod_globalcollection"
     keywoard = Column(UnicodeText, primary_key=True)
     contents = Column(PickleType, primary_key=True, nullable=False)
@@ -28,9 +28,9 @@ class Cat_GlobalCollection(BASE):
         )
 
 
-Cat_GlobalCollection.__table__.create(checkfirst=True)
+Cod_GlobalCollection.__table__.create(checkfirst=True)
 
-CAT_GLOBALCOLLECTION = threading.RLock()
+COD_GLOBALCOLLECTION = threading.RLock()
 
 
 class COLLECTION_SQL:
@@ -52,7 +52,7 @@ def add_to_collectionlist(keywoard, contents):
 
 def rm_from_collectionlist(keywoard, contents):
     with COD_GLOBALCOLLECTION:
-        keyword_items = SESSION.query(Cat_GlobalCollection).get(
+        keyword_items = SESSION.query(Cod_GlobalCollection).get(
             (keywoard, tuple(contents))
         )
         if keyword_items:
@@ -99,7 +99,7 @@ def get_collectionlist_items():
 
 def num_collectionlist():
     try:
-        return SESSION.query(Cat_GlobalCollection).count()
+        return SESSION.query(Cod_GlobalCollection).count()
     finally:
         SESSION.close()
 

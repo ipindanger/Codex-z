@@ -1,1 +1,1 @@
-worker: bash /resources/starting_up/getstart
+worker: bash /resources/stringsession/starting_up/getstart

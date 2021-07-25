@@ -1,1 +1,1 @@
-run: python3 -m usercodex
+worker: python3 -m usercodex

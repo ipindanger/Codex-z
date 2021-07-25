@@ -5,7 +5,7 @@ from sqlalchemy import Column, String, UnicodeText, distinct, func
 from . import BASE, SESSION
 
 
-class CatGloballist(BASE):
+class CodGloballist(BASE):
     __tablename__ = "codglobal_list"
     keywoard = Column(UnicodeText, primary_key=True)
     group_id = Column(String, primary_key=True, nullable=False)
@@ -25,9 +25,9 @@ class CatGloballist(BASE):
         )
 
 
-CatGloballist.__table__.create(checkfirst=True)
+CodGloballist.__table__.create(checkfirst=True)
 
-CATGLOBALLIST_INSERTION_LOCK = threading.RLock()
+CODGLOBALLIST_INSERTION_LOCK = threading.RLock()
 
 
 class GLOBALLIST_SQL:

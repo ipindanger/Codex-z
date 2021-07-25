@@ -10,6 +10,7 @@
   "repository": "https://github.com/Codex51/Codex/",
   "website": "#TODO",
   "success_url": "#TODO",
+  "stack":"container",
   "env": {
     "ALIVE_NAME": {
       "description": "give your name",

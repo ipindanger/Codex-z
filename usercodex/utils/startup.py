@@ -10,8 +10,8 @@ import requests
 from telethon import Button, functions, types, utils, version
 
 from usercodex import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
-from .. import codversion
 
+from .. import codversion
 from ..Config import Config
 from ..core.logger import logging
 from ..core.session import codex

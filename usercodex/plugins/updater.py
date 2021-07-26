@@ -183,7 +183,7 @@ async def push(event, repo, ups_rem, ac_br, txt):
         pass
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="update(| -pull)?$",
     command=("update", plugin_category),
     info={
@@ -271,7 +271,7 @@ async def upstream(event):
     return
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="update -push$",
 )
 async def upstream(event):

@@ -62,7 +62,7 @@ def run_async(func: callable):
     return loop.run_until_complete(func)
 
 
-async def restart_script(client: TelegramClient, codex):
+async def restart_script(client: TelegramClient, xedoc):
     """Restart the current script."""
     try:
         ulist = get_collectionlist_items()

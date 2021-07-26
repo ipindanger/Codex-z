@@ -316,6 +316,7 @@ Now you can't do anything unless my master comes online and unblocks you.**"
     except BaseException:
         return
 
+
 async def do_pm_chat_action(event, chat):
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -521,6 +522,7 @@ Then we can extend this conversation more but not right now.__"""
     sqllist.rm_from_list("pmoptions", event.query.user_id)
     await event.edit(text)
 
+
 @codex.tgbot.on(CallbackQuery(data=re.compile(rb"to_request_something")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
@@ -654,6 +656,7 @@ async def pmpermit_on(event):
         await edit_delete(
             event, "__Pmpermit Menu is already enabled for your account__"
         )
+
 
 @codex.cod_cmd(
     pattern="(a|approve)(?:\s|$)([\s\S]*)",

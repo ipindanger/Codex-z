@@ -45,4 +45,4 @@ if Config.PLUGIN_CHANNEL:
                     f"Installed Plugin `{os.path.basename(downloaded_file_name)}` successfully.",
                 )
 
-    codexo.loop.create_task(install())
+    codex.loop.create_task(install())

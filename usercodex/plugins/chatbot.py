@@ -1,4 +1,3 @@
-
 import random
 
 from telethon.utils import get_display_name

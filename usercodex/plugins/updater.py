@@ -261,7 +261,9 @@ async def upstream(event):
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond(f"**Command:**\n\n[ `{cmdhd}update -push` ] > update deploy\n[ `{cmdhd}update -pull` ] > update now")
+        return await event.respond(
+            f"**Command:**\n\n[ `{cmdhd}update -push` ] > update deploy\n[ `{cmdhd}update -pull` ] > update now"
+        )
 
     if force_update:
         await event.edit("`Force-Syncing to latest stable bot code, please wait...`")

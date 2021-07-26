@@ -21,7 +21,7 @@ from . import StartTime, codex, codversion, mention
 plugin_category = "utils"
 
 
-@codex.bot_cmd(
+@codex.cod_cmd(
     pattern="alive$",
     command=("alive", plugin_category),
     info={
@@ -73,7 +73,7 @@ async def amireallyalive(event):
         )
 
 
-@codex.bot_cmd(
+@codex.cod_cmd(
     pattern="ialive$",
     command=("ialive", plugin_category),
     info={

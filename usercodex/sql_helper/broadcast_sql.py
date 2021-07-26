@@ -40,7 +40,7 @@ BROADCAST_SQL_ = BROADCAST_SQL()
 
 def add_to_broadcastlist(keywoard, group_id):
     with CODBROADCAST_INSERTION_LOCK:
-        broadcast_group = CatBroadcast(keywoard, str(group_id))
+        broadcast_group = CodBroadcast(keywoard, str(group_id))
 
         SESSION.merge(broadcast_group)
         SESSION.commit()
@@ -49,7 +49,7 @@ def add_to_broadcastlist(keywoard, group_id):
 
 def rm_from_broadcastlist(keywoard, group_id):
     with CODBROADCAST_INSERTION_LOCK:
-        broadcast_group = SESSION.query(CatBroadcast).get((keywoard, str(group_id)))
+        broadcast_group = SESSION.query(CodBroadcast).get((keywoard, str(group_id)))
         if broadcast_group:
             if str(group_id) in BROADCAST_SQL_.BROADCAST_CHANNELS.get(keywoard, set()):
                 BROADCAST_SQL_.BROADCAST_CHANNELS.get(keywoard, set()).remove(
@@ -66,14 +66,14 @@ def rm_from_broadcastlist(keywoard, group_id):
 
 def is_in_broadcastlist(keywoard, group_id):
     with CODBROADCAST_INSERTION_LOCK:
-        broadcast_group = SESSION.query(CatBroadcast).get((keywoard, str(group_id)))
+        broadcast_group = SESSION.query(CodBroadcast).get((keywoard, str(group_id)))
         return bool(broadcast_group)
 
 
 def del_keyword_broadcastlist(keywoard):
     with CODBROADCAST_INSERTION_LOCK:
         broadcast_group = (
-            SESSION.query(CatBroadcast.keywoard)
+            SESSION.query(CodBroadcast.keywoard)
             .filter(CodBroadcast.keywoard == keywoard)
             .delete()
         )

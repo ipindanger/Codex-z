@@ -29,7 +29,7 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="(set|get|del) var ([\s\S]*)",
     command=("var", plugin_category),
     info={
@@ -118,7 +118,7 @@ async def variable(var):  # sourcery no-metrics
         del heroku_var[variable]
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="usage$",
     command=("usage", plugin_category),
     info={
@@ -188,7 +188,7 @@ async def dyno_usage(dyno):
     )
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="(herokulogs|logs)$",
     command=("logs", plugin_category),
     info={

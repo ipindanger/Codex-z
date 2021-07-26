@@ -126,7 +126,7 @@ async def cmdlist():
     return outstr
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="help ?(-c|-p|-t)? ?([\s\S]*)?",
     command=("help", plugin_category),
     info={
@@ -169,7 +169,7 @@ async def _(event):
     await edit_or_reply(event, outstr)
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="cmds(?:\s|$)([\s\S]*)",
     command=("cmds", plugin_category),
     info={
@@ -202,7 +202,7 @@ async def _(event):
     )
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="s ([\s\S]*)",
     command=("s", plugin_category),
     info={
@@ -223,7 +223,7 @@ async def _(event):
     await edit_or_reply(event, out)
 
 
-@codex.cod_cmd(
+@codex.bot_cmd(
     pattern="dc$",
     command=("dc", plugin_category),
     info={

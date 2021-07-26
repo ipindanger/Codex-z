@@ -41,7 +41,7 @@ async def amireallyalive(event):
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
     COD_IMG = gvarstatus("ALIVE_PIC")
     if COD_IMG:
-        [x for x in COD_IMG.split()]
+        A_IMG = [x for x in COD_IMG.split()]
         PIC = random.choice(A_IMG)
         cod_caption = f"**{ALIVE_TEXT}**\n\n"
         cod_caption += f"**{EMOJI} Master : {mention}**\n"

@@ -10,7 +10,7 @@ import requests
 from telethon import Button, functions, types, utils, version
 
 from usercodex import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
-from usercodex.plugins import codversion, mention
+from .. import codversion
 
 from ..Config import Config
 from ..core.logger import logging
@@ -84,7 +84,6 @@ async def startupmessage():
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
             text = f"**CodexUserbot is Back and Running...**\n\n"
-            text += f"**Master : {mention}**\n"
             text += f"Telethon version :** `{version.__version__}`\n"
             text += f"Python Version :** `{python_version()}`\n"
             text += f"Codex Version :** `{codversion}`\n"

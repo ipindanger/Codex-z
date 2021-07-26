@@ -104,7 +104,7 @@ async def _(event):
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
-        return await catevent.edit(NO_PERM)
+        return await codevent.edit(NO_PERM)
     except Exception as e:
         return await edit_delete(codevent, f"__{str(e)}__", time=10)
     await codevent.edit("`Promoted Successfully! Now gib Party`")

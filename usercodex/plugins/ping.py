@@ -9,7 +9,7 @@ plugin_category = "tools"
 
 @codex.cod_cmd(
     pattern="ping( -a|$)",
-    command=("ping", plugin_codegory),
+    command=("ping", plugin_category),
     info={
         "header": "check how long it takes to ping your userbot",
         "flags": {"-a": "average ping"},
@@ -42,7 +42,7 @@ async def _(event):
 
 @codex.cod_cmd(
     pattern="fping$",
-    command=("fping", plugin_codegory),
+    command=("fping", plugin_category),
     info={"header": "Shows the server ping with extra animation", "usage": "{tr}fping"},
 )
 async def _(event):

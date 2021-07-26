@@ -83,7 +83,7 @@ async def startupmessage():
         if msg_details:
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "**CodexUserbot is Back and Running...**\n\n"
+            text = f"**CodexUserbot is Back and Running...**\n\n"
             text += f"**Master : {mention}**\n"
             text += f"Telethon version :** `{version.__version__}`\n"
             text += f"Python Version :** `{python_version()}`\n"

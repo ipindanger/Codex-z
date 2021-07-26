@@ -20,7 +20,7 @@ from ..sql_helper.global_collection import (
     get_item_collectionlist,
 )
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from . import codversion, mention
+from usercodex.plugins import codversion, mention
 from .pluginmanager import load_module
 from .tools import create_supergroup
 
@@ -83,7 +83,7 @@ async def startupmessage():
         if msg_details:
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
-            text = "**CodexUserbot is Back and Running...**\n\n"
+            text = message.text + "**CodexUserbot is Back and Running...**\n\n"
             text += f"**Master : {mention}**\n"
             text += f"Telethon version :** `{version.__version__}`\n"
             text += f"Python Version :** `{python_version()}`\n"

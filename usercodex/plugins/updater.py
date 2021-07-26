@@ -305,6 +305,7 @@ async def upstream(event):
     await event.edit("`Deploying codex, please wait...`")
     await push(event, repo, ups_rem, ac_br, txt)
 
+
 @codex.cod_cmd(
     pattern="Codex$",
     command=("Codex", plugin_category),

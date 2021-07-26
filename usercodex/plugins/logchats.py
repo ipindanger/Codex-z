@@ -1,4 +1,5 @@
-# pm and tagged messages logger for catuserbot by @mrconfused (@sandy1709)
+# pm and tagged messages logger for codex
+# Special Credits : Catuserbot @mrconfused (@sandy1709)
 import asyncio
 
 from usercodex import codex

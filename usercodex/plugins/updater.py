@@ -187,16 +187,18 @@ async def push(event, repo, ups_rem, ac_br, txt):
     pattern="update(| -pull)?$",
     command=("update", plugin_category),
     info={
-        "header": "To update userbot.",
+        "header": "To update CodexUserbot.",
         "description": "I recommend you to do update deploy atlest once a week.",
         "options": {
             "-pull": "Will update bot but requirements doesnt update.",
             "-push": "Bot will update completly with requirements also.",
+            "-codex -master": "to update to the original repository, if you fork.",
         },
         "usage": [
             "{tr}update",
             "{tr}update -pull",
             "{tr}update -push",
+            "{tr}update -codex -master",
         ],
     },
 )
@@ -309,15 +311,10 @@ async def upstream(event):
 
 
 @codex.cod_cmd(
-    pattern="Codex$",
-    command=("Codex", plugin_category),
-    info={
-        "header": "To update to codex( For vEg peeps).",
-        "usage": "{tr}Codex",
-    },
+    pattern="update -codex -master$",
 )
 async def variable(var):
-    "To update to Codex."
+    "To update to Codex Repository."
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
             var,

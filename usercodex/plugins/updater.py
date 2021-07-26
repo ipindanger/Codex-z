@@ -121,7 +121,7 @@ async def push(event, repo, ups_rem, ac_br, txt):
     if HEROKU_APP_NAME is None:
         await event.edit(
             "`Please set up the` **HEROKU_APP_NAME** `Var`"
-            " to be able to deploy your userbot...`"
+            " to be able to deploy your codex...`"
         )
         repo.__del__()
         return
@@ -131,11 +131,11 @@ async def push(event, repo, ups_rem, ac_br, txt):
             break
     if heroku_app is None:
         await event.edit(
-            f"{txt}\n" "`Invalid Heroku credentials for deploying userbot dyno.`"
+            f"{txt}\n" "`Invalid Heroku credentials for deploying Codex dyno.`"
         )
         return repo.__del__()
     xedoc = await event.edit(
-        "`Userbot dyno build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
+        "`Codex dyno build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
     )
     try:
         ulist = get_collectionlist_items()
@@ -261,7 +261,7 @@ async def upstream(event):
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond(f"do `{cmdhd}update deploy` to update the codex")
+        return await event.respond(f"do `{cmdhd}update -push` to update the codex")
 
     if force_update:
         await event.edit("`Force-Syncing to latest stable bot code, please wait...`")
@@ -310,7 +310,7 @@ async def upstream(event):
     pattern="Codex$",
     command=("Codex", plugin_category),
     info={
-        "header": "To update to goodcat( For vEg peeps).",
+        "header": "To update to codex( For vEg peeps).",
         "usage": "{tr}Codex",
     },
 )

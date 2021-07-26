@@ -44,7 +44,7 @@ PATH = "./userbot/cache/ytsearch.json"
 plugin_category = "bot"
 
 
-@codex.bot_cmd(
+@codex.cod_cmd(
     pattern="iytdl(?:\s|$)([\s\S]*)",
     command=("iytdl", plugin_category),
     info={

@@ -32,7 +32,7 @@ except Exception as e:
 
 
 codex.tgbot = tgbot = CodexClient(
-    session="CodTgBot",
+    session="CodTgbot",
     api_id=Config.APP_ID,
     api_hash=Config.API_HASH,
     loop=loop,

@@ -183,7 +183,7 @@ async def push(event, repo, ups_rem, ac_br, txt):
         pass
 
 
-@codex.bot_cmd(
+@codex.cod_cmd(
     pattern="update(| -pull)?$",
     command=("update", plugin_category),
     info={
@@ -271,7 +271,7 @@ async def upstream(event):
     return
 
 
-@codex.bot_cmd(
+@codex.cod_cmd(
     pattern="update -push$",
 )
 async def upstream(event):
@@ -304,3 +304,29 @@ async def upstream(event):
     ups_rem.fetch(ac_br)
     await event.edit("`Deploying codex, please wait...`")
     await push(event, repo, ups_rem, ac_br, txt)
+
+@codex.cod_cmd(
+    pattern="Codex$",
+    command=("Codex", plugin_category),
+    info={
+        "header": "To update to goodcat( For vEg peeps).",
+        "usage": "{tr}Codex",
+    },
+)
+async def variable(var):
+    "To update to Codex."
+    if Config.HEROKU_API_KEY is None:
+        return await edit_delete(
+            var,
+            "Set the required var in heroku to function this normally `HEROKU_API_KEY`.",
+        )
+    if Config.HEROKU_APP_NAME is not None:
+        app = Heroku.app(Config.HEROKU_APP_NAME)
+    else:
+        return await edit_delete(
+            var,
+            "Set the required var in heroku to function this normally `HEROKU_APP_NAME`.",
+        )
+    heroku_var = app.config()
+    await edit_or_reply(var, f"`Changing badcat to goodcat wait for 2-3 minutes.`")
+    heroku_var["UPSTREAM_REPO"] = "https://github.com/Codex51/Codex"

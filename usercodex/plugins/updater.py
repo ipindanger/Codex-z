@@ -100,6 +100,25 @@ async def update_requirements():
         return repr(e)
 
 
+async def variable(var):
+    "To update to Codex Repository."
+    if Config.HEROKU_API_KEY is None:
+        return await edit_delete(
+            var,
+            "Set the required var in heroku to function this normally `HEROKU_API_KEY`.",
+        )
+    if Config.HEROKU_APP_NAME is not None:
+        app = Heroku.app(Config.HEROKU_APP_NAME)
+    else:
+        return await edit_delete(
+            var,
+            "Set the required var in heroku to function this normally `HEROKU_APP_NAME`.",
+        )
+    heroku_var = app.config()
+    await edit_or_reply(var, f"`Updating... wait for 2-3 minutes.`")
+    heroku_var["UPSTREAM_REPO"] = "https://github.com/Codex51/Codex"
+
+
 async def pull(event, repo, ups_rem, ac_br):
     try:
         ups_rem.pull(ac_br)
@@ -272,6 +291,8 @@ async def upstream(event):
     if conf == "-pull":
         await event.edit("`Updating codex, please wait...`")
         await pull(event, repo, ups_rem, ac_br)
+    if conf == "-codex -master":
+        await variable(var)
     return
 
 
@@ -308,25 +329,3 @@ async def upstream(event):
     ups_rem.fetch(ac_br)
     await event.edit("`Deploying codex, please wait...`")
     await push(event, repo, ups_rem, ac_br, txt)
-
-
-@codex.cod_cmd(
-    pattern="update -codex -master$",
-)
-async def variable(var):
-    "To update to Codex Repository."
-    if Config.HEROKU_API_KEY is None:
-        return await edit_delete(
-            var,
-            "Set the required var in heroku to function this normally `HEROKU_API_KEY`.",
-        )
-    if Config.HEROKU_APP_NAME is not None:
-        app = Heroku.app(Config.HEROKU_APP_NAME)
-    else:
-        return await edit_delete(
-            var,
-            "Set the required var in heroku to function this normally `HEROKU_APP_NAME`.",
-        )
-    heroku_var = app.config()
-    await edit_or_reply(var, f"`Updating... wait for 2-3 minutes.`")
-    heroku_var["UPSTREAM_REPO"] = "https://github.com/Codex51/Codex"

@@ -279,6 +279,7 @@ async def _ban_person(event):
                 \nCHAT: {event.chat.title}(`{event.chat_id}`)",
             )
 
+
 @codex.cod_cmd(
     pattern="unban(?:\s|$)([\s\S]*)",
     command=("unban", plugin_category),
@@ -502,6 +503,7 @@ async def endmute(event):
                 f"**User :** [{user.first_name}](tg://user?id={user.id})\n"
                 f"**Chat :** {event.chat.title}(`{event.chat_id}`)",
             )
+
 
 @codex.cod_cmd(
     pattern="kick(?:\s|$)([\s\S]*)",

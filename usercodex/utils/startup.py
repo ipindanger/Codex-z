@@ -6,7 +6,8 @@ from datetime import timedelta
 from pathlib import Path
 
 import requests
-from telethon import Button, functions, types, utils
+from telethon import Button, functions, types, utils, version
+from platform import python_version
 
 from usercodex import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
@@ -21,6 +22,8 @@ from ..sql_helper.global_collection import (
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
+from . import codversion, mention
+
 
 LOGS = logging.getLogger("CodexUserbot")
 cmdhr = Config.COMMAND_HAND_LER
@@ -81,7 +84,11 @@ async def startupmessage():
         if msg_details:
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**Ok Codex is Back and Alive.**"
+            text = "**CodexUserbot is Back and Running...**\n\n"
+            text += f"**Master : {mention}**\n"
+            text += f"Telethon version :** `{version.__version__}`\n"
+            text += f"Python Version :** `{python_version()}`\n"
+            text += f"Codex Version :** `{codversion}`\n"
             await codex.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await codex.send_message(
@@ -208,7 +215,7 @@ async def verifyLoggerGroup():
     else:
         descript = "Don't delete this group or change to group(If you change group all your previous snips, welcome will be lost.)"
         _, groupid = await create_supergroup(
-            "CodexUserbot BotLog Group", codex, Config.TG_BOT_USERNAME, descript
+            "CodexUserbot (LOGS Group)", codex, Config.TG_BOT_USERNAME, descript
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print(

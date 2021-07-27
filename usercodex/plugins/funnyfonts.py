@@ -1,7 +1,7 @@
 import random
 import re
 
-from usercode import codex
+from usercodex import codex
 
 from ..core.managers import edit_or_reply
 from . import fonts

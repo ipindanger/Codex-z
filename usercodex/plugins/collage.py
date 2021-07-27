@@ -27,7 +27,7 @@ async def collage(event):
     "To create collage from still images extracted from video/gif."
     codinput = event.pattern_match.group(1)
     reply = await event.get_reply_message()
-    await reply_id(event)
+    codid = await reply_id(event)
     event = await edit_or_reply(
         event, "```collaging this may take several minutes too..... 😁```"
     )
@@ -38,12 +38,12 @@ async def collage(event):
         os.mkdir("./temp/")
     codsticker = await reply.download_media(file="./temp/")
     if not codsticker.endswith((".mp4", ".mkv", ".tgs")):
-        os.remove(catsticker)
+        os.remove(codsticker)
         await event.edit("`Media format is not supported...`")
         return
     if codinput:
-        if not catinput.isdigit():
-            os.remove(catsticker)
+        if not codinput.isdigit():
+            os.remove(codsticker)
             await event.edit("`You input is invalid, check help`")
             return
         codinput = int(codinput)

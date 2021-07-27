@@ -44,7 +44,7 @@ async def amireallyalive(event):
         A_IMG = [x for x in COD_IMG.split()]
         PIC = random.choice(A_IMG)
         cod_caption = f"**{ALIVE_TEXT}**\n\n"
-        cod_caption += f"**{EMOJI} Master : {mention}**\n"
+        cod_caption += f"**{EMOJI} User : {mention}**\n"
         cod_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
         cod_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
         cod_caption += f"**{EMOJI} Codex Version :** `{codversion}`\n"
@@ -64,7 +64,7 @@ async def amireallyalive(event):
         await edit_or_reply(
             event,
             f"**{ALIVE_TEXT}**\n\n"
-            f"**{EMOJI} Master : {mention}**\n"
+            f"**{EMOJI} User : {mention}**\n"
             f"**{EMOJI} Uptime :** `{uptime}\n`"
             f"**{EMOJI} Telethon Version :** `{version.__version__}\n`"
             f"**{EMOJI} Codex Version :** `{codversion}`\n"
@@ -92,7 +92,7 @@ async def amireallyalive(event):
     cod_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
     cod_caption += f"**{EMOJI} Codex Version :** `{codversion}`\n"
     cod_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
-    cod_caption += f"**{EMOJI} Master:** {mention}\n"
+    cod_caption += f"**{EMOJI} User:** {mention}\n"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, cod_caption)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()

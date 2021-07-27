@@ -15,7 +15,7 @@ plugin_category = "admin"
 async def on_new_message(event):
     name = event.raw_text
     snips = sql.get_chat_blacklist(event.chat_id)
-    codadmin = await is_admin(event.client, event.chat_id, event.client.uid)
+    await is_admin(event.client, event.chat_id, event.client.uid)
     if not catadmin:
         return
     for snip in snips:

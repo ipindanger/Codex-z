@@ -79,7 +79,7 @@ async def codgban(event):  # sourcery no-metrics
             await asyncio.sleep(0.5)
             count += 1
         except BadRequestError:
-            achat = await event.client.get_entity(san[i])
+            achat = await event.client.get_entity(cod[i])
             await event.client.send_message(
                 BOTLOG_CHATID,
                 f"`You don't have required permission in :`\n**Chat :** {get_display_name(achat)}(`{achat.id}`)\n`For banning here`",
@@ -142,7 +142,7 @@ async def codgban(event):
     if not user:
         return
     if gban_sql.is_gbanned(user.id):
-        gban_sql.catungban(user.id)
+        gban_sql.codungban(user.id)
     else:
         return await edit_delete(
             code, f"the [user](tg://user?id={user.id}) `is not in your gbanned list`"
@@ -376,7 +376,7 @@ async def codgkick(event):  # sourcery no-metrics
     if not user:
         return
     if user.id == codex.uid:
-        return await edit_delete(cate, "`why would I kick myself`")
+        return await edit_delete(code, "`why would I kick myself`")
     cod = await admin_groups(event.client)
     count = 0
     xedoc = len(cod)

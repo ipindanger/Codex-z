@@ -150,7 +150,7 @@ async def digitalpicloop():
         cod = str(base64.b64decode("dXNlcmJvdC9oZWxwZXJzL3N0eWxlcy9kaWdpdGFsLnR0Zg=="))[
             2:36
         ]
-        fnt = ImageFont.truetype(cat, 200)
+        fnt = ImageFont.truetype(cod, 200)
         drawn_text.text((350, 100), current_time, font=fnt, fill=(124, 252, 0))
         img.save(autophoto_path)
         file = await codex.upload_file(autophoto_path)

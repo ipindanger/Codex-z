@@ -7,7 +7,7 @@ Plugin for CatUserbot
 import asyncio
 
 from ..core.managers import edit_or_reply
-from . import catub, mention
+from . import mention
 
 plugin_category = "fun"
 

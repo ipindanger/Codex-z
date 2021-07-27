@@ -1,4 +1,3 @@
-
 from validators.url import url
 
 from usercodex import codex

@@ -118,7 +118,7 @@ async def lst(event):
     "To delete a file or folder."
     cod = event.pattern_match.group(1)
     if cat:
-        path = Path(cat)
+        path = Path(cod)
     else:
         await edit_or_reply(event, "what should i delete")
         return

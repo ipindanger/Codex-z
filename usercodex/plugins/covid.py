@@ -2,6 +2,7 @@
 # Credits @Catuserbot
 
 from covid import Covid
+
 from . import codex, covidindo, edit_delete, edit_or_reply
 
 plugin_category = "extra"

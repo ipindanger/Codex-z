@@ -35,7 +35,7 @@ async def lst(event):  # sourcery no-metrics
             f"there is no such directory or file with the name `{cod}` check again",
         )
         return
-    path = Path(cod) if cat else os.getcwd()
+    path = Path(cod) if cod else os.getcwd()
     if os.path.isdir(path):
         if cod:
             msg = "Folders and Files in `{}` :\n".format(path)

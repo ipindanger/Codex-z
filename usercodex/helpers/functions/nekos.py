@@ -142,7 +142,7 @@ async def threats(text):
 async def lolice(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=lolice&url={text}").json()
     xedoc = r.get("message")
-    codurl = url(sandy)
+    codurl = url(xedoc)
     if not codurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:

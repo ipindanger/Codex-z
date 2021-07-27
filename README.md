@@ -9,6 +9,6 @@
 ## Special Credits ©
 
 * [sandy1709](https://github.com/sandy1709/) - [goodcat](https://github.com/sandy1709/catuserbot) 🇮🇳
-* [Jisan09](https://github.com/Jisan09/catuserbot) - [badcat](https://github.com/Jisan09/catuserbot) 🇮🇳
+* [Jisan09](https://github.com/Jisan09/) - [badcat](https://github.com/Jisan09/catuserbot) 🇮🇳
 * [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
 # [![Sparkline](https://stars.medv.io/Lonamiwebs/telethon.svg)](https://stars.medv.io/Lonamiwebs/telethon)

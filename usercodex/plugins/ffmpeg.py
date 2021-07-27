@@ -25,7 +25,7 @@ async def cult_small_video(
     video_file, output_directory, start_time, end_time, out_put_file_name=None
 ):
     # https://stackoverflow.com/a/13891070/4723940
-    out_put_file_name= out_put_file_name or os.path.join(
+    out_put_file_name = out_put_file_name or os.path.join(
         output_directory, f"{str(round(time.time()))}.mp4"
     )
     file_genertor_command = [

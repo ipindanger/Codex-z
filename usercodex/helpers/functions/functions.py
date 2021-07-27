@@ -220,9 +220,9 @@ async def unzip(downloaded_file_name):
 # covid india data
 
 
-async def covidindia(state):
-    url = "https://www.mohfw.gov.in/data/datanew.json"
-    req = requests.get(url).json()
+async def covidindo(state):
+    url = "https://api.kawalcorona.com/indonesia/"
+    req = requests.get(url)
     for i in states:
         if i == state:
             return req[states.index(i)]

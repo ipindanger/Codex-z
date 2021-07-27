@@ -58,7 +58,7 @@ async def codgban(event):  # sourcery no-metrics
     if not user:
         return
     if user.id == codex.uid:
-        return await edit_delete(cate, "`why would I ban myself`")
+        return await edit_delete(code, "`why would I ban myself`")
     if gban_sql.is_gbanned(user.id):
         await code.edit(
             f"`the `[user](tg://user?id={user.id})` is already in gbanned list any way checking again`"

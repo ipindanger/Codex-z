@@ -96,7 +96,7 @@ async def test(event):
     )
 
 
-@codexo.cod_cmd(
+@codex.cod_cmd(
     pattern="city$",
     command=("city", plugin_category),
     info={

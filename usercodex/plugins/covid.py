@@ -40,7 +40,7 @@ async def corona(event):
         data += f"\n💉 Total tests    : <code>{country_data['total_tests']}</code>"
         data += f"\n🥺 New Cases   : <code>{country_data['new_cases']}</code>"
         data += f"\n😟 New Deaths : <code>{country_data['new_deaths']}</code>"
-        await catevent.edit(
+        await codevent.edit(
             "<b>Corona Virus Info of {}:\n{}</b>".format(country, data),
             parse_mode="html",
         )

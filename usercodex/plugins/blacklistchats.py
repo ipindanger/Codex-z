@@ -2,7 +2,6 @@ from datetime import datetime
 
 from telethon.utils import get_display_name
 
-from usercodex import catub
 from usercodex.core.logger import logging
 
 from ..core.data import blacklist_chats_list

@@ -177,4 +177,3 @@ async def carbon_api(event):
     os.remove("./carbon.png")
     driver.quit()
     await cod.delete()
-

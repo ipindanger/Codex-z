@@ -35,6 +35,6 @@ states = [
     "Uttarakhand",
     "Uttar Pradesh",
     "West Bengal",
-    "Indonesian",
+    "Indonesia",
     "",
 ]

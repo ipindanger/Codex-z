@@ -121,7 +121,7 @@ async def custompfploop():
             if i > 0:
                 await codex(
                     functions.photos.DeletePhotosRequest(
-                        await catub.get_profile_photos("me", limit=1)
+                        await codex.get_profile_photos("me", limit=1)
                     )
                 )
             i += 1

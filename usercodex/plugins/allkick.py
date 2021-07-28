@@ -1,14 +1,13 @@
 # Port by kenzo
 import asyncio
-from telethon.tl.types import ChannelParticipantCreator as owner
-from telethon.tl.types import ChannelParticipantAdmin as admin
-from telethon.tl.types import ChatBannedRights
+
 from telethon.tl.functions.channels import EditBannedRequest
-from telethon.tl.types import ChannelParticipantsKicked
+from telethon.tl.types import ChannelParticipantAdmin as admin
+from telethon.tl.types import ChannelParticipantCreator as owner
+from telethon.tl.types import ChannelParticipantsKicked, ChatBannedRights
 from telethon.utils import get_display_name
 
 from usercodex import codex
-
 
 plugin_category = "admin"
 
@@ -33,7 +32,9 @@ async def allkick(event):
     admin = lynxuser.admin_rights
     creator = lynxuser.creator
     if not admin and not creator:
-        await event.edit("`#Disclaimer ❌\nThis plugin is specifically for Owners and Co-Founders.`")
+        await event.edit(
+            "`#Disclaimer ❌\nThis plugin is specifically for Owners and Co-Founders.`"
+        )
         return
     await event.edit("`in Process...`")
 
@@ -43,10 +44,16 @@ async def allkick(event):
             pass
 
         try:
-            await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None, view_messages=True)))
+            await event.client(
+                EditBannedRequest(
+                    event.chat_id,
+                    int(user.id),
+                    ChatBannedRights(until_date=None, view_messages=True),
+                )
+            )
         except Exception as e:
             await event.edit(str(e))
-        await sleep(.5)
+        await sleep(0.5)
     await event.edit(f"#Successfully ☑️\nYou have kicked All Members here.")
 
 

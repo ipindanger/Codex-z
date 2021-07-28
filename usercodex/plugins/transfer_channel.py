@@ -4,6 +4,7 @@ Available Commands:
 
 import telethon.password as pwd_mod
 from telethon.tl import functions
+from usercodex import codex
 
 from ..Config import Config
 

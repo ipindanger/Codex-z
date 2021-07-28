@@ -193,7 +193,7 @@ async def kakashi(putinsay):
     await edit_or_reply(putinsay, D)
 
 
-@codex.codex_cmd(
+@codex.cod_cmd(
     pattern="sdead ([\s\S]*)",
     command=("sdead", plugin_category),
     info={

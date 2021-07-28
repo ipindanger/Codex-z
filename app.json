@@ -35,7 +35,7 @@
       "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
       "value": ""
       "required": true
-
+    },
     "TG_BOT_USERNAME": {
       "description": "Username of the bot you created with @BotFather.",
       "value": ""

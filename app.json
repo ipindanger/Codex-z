@@ -58,8 +58,8 @@
     },
     "HEROKU_APP_NAME": {
       "description": "YOUR app name ",
-      "value": "",
-      "required": True
+      "value":
+      "required": true
     },
     "TZ": {
       "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",

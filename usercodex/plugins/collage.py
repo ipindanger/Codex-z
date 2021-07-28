@@ -27,7 +27,7 @@ async def collage(event):
     "To create collage from still images extracted from video/gif."
     codinput = event.pattern_match.group(1)
     reply = await event.get_reply_message()
-    await reply_id(event)
+    codid = await reply_id(event)
     event = await edit_or_reply(
         event, "```collaging this may take several minutes too..... 😁```"
     )
@@ -76,7 +76,7 @@ async def collage(event):
     await event.client.send_file(
         event.chat_id,
         endfile,
-        reply_to=catid,
+        reply_to=codid,
     )
     await event.delete()
     for files in (codsticker, collagefile, endfile):

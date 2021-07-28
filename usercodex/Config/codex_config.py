@@ -1,4 +1,4 @@
-# config values will be loaded from here
+# Config ENV values will be loaded from here
 
 import os
 

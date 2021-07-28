@@ -47,7 +47,7 @@ async def amireallyalive(event):
         cod_caption += f"**{EMOJI} User : {mention}**\n"
         cod_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
         cod_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-        cod_caption += f"**{EMOJI} Codex Version :** `{codversion}`\n"
+        cod_caption += f"**{EMOJI} Codexuserbot Version :** `{codversion}`\n"
         cod_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
         cod_caption += f"**{EMOJI} Database :** `{check_sgnirts}`\n"
         try:
@@ -67,7 +67,7 @@ async def amireallyalive(event):
             f"**{EMOJI} User : {mention}**\n"
             f"**{EMOJI} Uptime :** `{uptime}\n`"
             f"**{EMOJI} Telethon Version :** `{version.__version__}\n`"
-            f"**{EMOJI} Codex Version :** `{codversion}`\n"
+            f"**{EMOJI} Codexuserbot Version :** `{codversion}`\n"
             f"**{EMOJI} Python Version :** `{python_version()}\n`"
             f"**{EMOJI} Database :** `{check_sgnirts}`\n",
         )
@@ -90,7 +90,7 @@ async def amireallyalive(event):
     EMOJI = gvarstatus("ALIVE_EMOJI") or "✧✧"
     cod_caption = f"**Codexuserbot is Up and Running**\n"
     cod_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-    cod_caption += f"**{EMOJI} Codex Version :** `{codversion}`\n"
+    cod_caption += f"**{EMOJI} Codexuserbot Version :** `{codversion}`\n"
     cod_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
     cod_caption += f"**{EMOJI} User:** {mention}\n"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, cod_caption)

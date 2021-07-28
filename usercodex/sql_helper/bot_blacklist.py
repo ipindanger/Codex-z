@@ -4,7 +4,7 @@ from . import BASE, SESSION
 
 
 class Bot_BlackList(BASE):
-    __tablename__ = "bot_blacklist"
+    __tablename__ = "bot_blacklists"
     chat_id = Column(String(14), primary_key=True)
     first_name = Column(UnicodeText)
     username = Column(UnicodeText)

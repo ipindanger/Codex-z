@@ -22,7 +22,7 @@ class FPOST:
 FPOST_ = FPOST()
 
 
-async def all_groups_id(cat):
+async def all_groups_id(cod):
     codgroups = []
     async for dialog in cod.client.iter_dialogs():
         entity = dialog.entity

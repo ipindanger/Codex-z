@@ -266,7 +266,7 @@ async def video_catfile(event):  # sourcery no-metrics
             xedoc = await event.client.send_file(
                 event.chat_id,
                 media,
-                reply_to=catid,
+                reply_to=codid,
                 video_note=True,
                 supports_streaming=True,
             )

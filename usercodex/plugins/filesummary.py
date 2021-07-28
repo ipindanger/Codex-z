@@ -188,7 +188,7 @@ async def _(event):  # sourcery no-metrics
             link = chatdata.title
     else:
         link = f"<a href='tg://user?id={chatdata.id}'>{chatdata.first_name}</a>"
-    catevent = await edit_or_reply(
+    codevent = await edit_or_reply(
         event,
         f"<code>Counting files and file size by </code>{_format.htmlmentionuser(userdata.first_name,userdata.id)}<code> in Group </code><b>{link}</b>\n<code>This may take some time also depends on number of user messages</code>",
         parse_mode="HTML",

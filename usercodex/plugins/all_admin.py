@@ -7,9 +7,9 @@ from telethon.tl.types import ChannelParticipantCreator as owner
 from telethon.tl.types import ChannelParticipantsKicked, ChatBannedRights
 from telethon.utils import get_display_name
 
-from ..core.logger import logging
-
 from usercodex import codex
+
+from ..core.logger import logging
 
 plugin_category = "admin"
 

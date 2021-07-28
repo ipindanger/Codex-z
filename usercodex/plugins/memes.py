@@ -14,7 +14,7 @@ from userbot import catub
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import catmemes
-from ..helpers.utils import _catutils
+from ..helpers.utils import _codutils
 from . import BOTLOG, BOTLOG_CHATID, mention
 
 plugin_category = "fun"
@@ -218,10 +218,10 @@ async def decide(event):
     else:
         r = requests.get(f"https://yesno.wtf/api").json()
     await event.delete()
-    sandy = await event.client.send_message(
+    xedoc = await event.client.send_message(
         event.chat_id, str(r["answer"]).upper(), reply_to=message_id, file=r["image"]
     )
-    await _catutils.unsavegif(event, sandy)
+    await _codutils.unsavegif(event, xedoc)
 
 
 @catub.cat_cmd(

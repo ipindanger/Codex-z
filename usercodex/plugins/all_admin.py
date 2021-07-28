@@ -6,6 +6,7 @@ from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
 from telethon.tl.types import ChannelParticipantsKicked, ChatBannedRights
 from telethon.utils import get_display_name
+from telethon.tl.functions.users import GetFullUserRequest
 
 from usercodex import codex
 
@@ -27,6 +28,8 @@ LOGS = logging.getLogger(__name__)
         ],
         "examples": "{tr}allkick and see.",
     },
+    groups_only=True,
+    require_admin=True,
 )
 async def allkick(event):
     lynxuser = await event.get_chat()
@@ -40,11 +43,10 @@ async def allkick(event):
         return
     await event.edit("`in Process...`")
 
-    everyone = await event.client.get_participants(event.chat_id)
+    everyone = await event.client.get_participants(GetFullUserRequest(event.chat_id))
     for user in everyone:
         if user.id == lynxget.id:
             pass
-
         try:
             await event.client(
                 EditBannedRequest(
@@ -75,6 +77,8 @@ def user_list(l, n):
         ],
         "examples": "{tr}alltags and see.",
     },
+    groups_only=True,
+    require_admin=True,
 )
 async def alltags(event):
     text = (event.pattern_match.group(1)).strip()
@@ -127,6 +131,7 @@ async def alltags(event):
         ],
         "examples": "{tr}allunban and see.",
     },
+    groups_only=True,
 )
 async def _(event):
     await event.edit("Looking for a List Banning...")

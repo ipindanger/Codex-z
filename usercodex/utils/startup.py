@@ -83,10 +83,10 @@ async def startupmessage():
         if msg_details:
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
-            text = f"**CodexUserbot is Back and Running...**\n\n"
-            text += f"Telethon version :** `{version.__version__}`\n"
-            text += f"Python Version :** `{python_version()}`\n"
-            text += f"Codex Version :** `{codversion}`\n"
+            text = f"`CodexUserbot` **is Back and Running...**\n\n"
+            text += f"`Telethon version:` __{version.__version__}__\n"
+            text += f"`Python Version  :` __{python_version()}__\n"
+            text += f"`Codex Version   :`  __{codversion}__\n"
             await codex.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await codex.send_message(

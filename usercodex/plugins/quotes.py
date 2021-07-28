@@ -5,7 +5,6 @@ from usercodex import codex
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers import codmemes
 from ..helpers.functions import random_quote, search_quotes
 from ..helpers.utils import parse_pre
 

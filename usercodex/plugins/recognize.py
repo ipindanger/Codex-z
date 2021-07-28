@@ -28,7 +28,7 @@ async def _(event):
     chat = "@Rekognition_Bot"
     if reply_message.sender.bot:
         return await event.edit("Reply to actual users message.")
-    codex = await edit_or_reply(event, "recognizeing this media")
+    await edit_or_reply(event, "recognizeing this media")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(

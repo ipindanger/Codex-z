@@ -7,7 +7,7 @@ import asyncio
 import random
 
 from ..core.managers import edit_or_reply
-from . import codmemes, codex
+from . import codex, codmemes
 
 plugin_category = "extra"
 

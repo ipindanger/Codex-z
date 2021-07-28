@@ -60,11 +60,9 @@ async def _(event):  # sourcery no-metrics
         await edit_delete(codevent, "`The user doesn't have any record`")
     names, usernames = await sanga_seperator(responses)
     cmd = event.pattern_match.group(1)
-    xedoc = None
     check = usernames if cmd == "u" else names
     for i in check:
         if sandy:
             await event.reply(i, parse_mode=_format.parse_pre)
         else:
-            xedoc = True
             await codevent.edit(i, parse_mode=_format.parse_pre)

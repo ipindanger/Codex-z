@@ -77,4 +77,4 @@ async def reddit_fetch(event):
             event.chat_id, media_url, caption=captionx, reply_to=reply_to
         )
         if media_url.endswith(".gif"):
-            await _codutils.unsavegif(event, sandy)
+            await _codutils.unsavegif(event, xedoc)

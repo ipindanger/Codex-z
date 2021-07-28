@@ -7,6 +7,7 @@ from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import random_quote, search_quotes
 from ..helpers.utils import parse_pre
+from ..helpers import codmemes
 
 LOGS = logging.getLogger(__name__)
 plugin_category = "extra"

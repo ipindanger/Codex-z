@@ -13,8 +13,8 @@ from simplejson.errors import JSONDecodeError
 
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.functions import age_verification
-from ..helpers.utils import _catutils, reply_id
-from . import catub, useless
+from ..helpers.utils import _codutils, reply_id
+from . import codex, useless
 
 plugin_category = "useless"
 
@@ -23,7 +23,7 @@ def user_agent():
     return UserAgent().random
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="nn ?([\s\S]*)",
     command=("nn", plugin_category),
     info={
@@ -45,7 +45,7 @@ async def _(event):
         )
     if await age_verification(event, reply_to):
         return
-    catevent = await edit_or_reply(event, "`Processing Nekos...`")
+    codevent = await edit_or_reply(event, "`Processing Nekos...`")
     flag = await useless.importent(event)
     if flag:
         return
@@ -53,11 +53,11 @@ async def _(event):
     nohorny = await event.client.send_file(
         event.chat_id, file=target, caption=f"**{choose}**", reply_to=reply_to
     )
-    await _catutils.unsavegif(event, nohorny)
-    await catevent.delete()
+    await _codutils.unsavegif(event, nohorny)
+    await codevent.delete()
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="dva$",
     command=("dva", plugin_category),
     info={
@@ -86,7 +86,7 @@ async def dva(event):
     await event.delete()
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="nsfw$",
     command=("nsfw", plugin_category),
     info={
@@ -114,7 +114,7 @@ async def avatarlewd(event):
     await event.delete()
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="lewdn$",
     command=("lewdn", plugin_category),
     info={
@@ -138,7 +138,7 @@ async def lewdn(event):
     await event.delete()
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="gasm$",
     command=("gasm", plugin_category),
     info={
@@ -166,7 +166,7 @@ async def gasm(event):
     await event.delete()
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="ifu$",
     command=("ifu", plugin_category),
     info={

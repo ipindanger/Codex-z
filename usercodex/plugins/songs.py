@@ -97,7 +97,7 @@ async def _(event):
     if not os.path.exists(codthumb):
         codthumb = Path(f"{codname}.webp")
     elif not os.path.exists(codthumb):
-        pass
+        codthumb = None
 
     await event.client.send_file(
         event.chat_id,

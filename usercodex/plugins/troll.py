@@ -100,7 +100,7 @@ async def cod(event):
         "usage": "{tr}sbob <text>",
     },
 )
-async def cat(event):
+async def cod(event):
     "spongebob troll"
     reply_to_id = await reply_id(event)
     input_text = event.pattern_match.group(1)
@@ -120,7 +120,7 @@ async def cat(event):
         "usage": "{tr}child <text>",
     },
 )
-async def cat(event):
+async def cod(event):
     "child troll"
     reply_to_id = await reply_id(event)
     input_text = event.pattern_match.group(1)

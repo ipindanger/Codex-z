@@ -1,7 +1,7 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
-# catUserbot module for having some fun with people.
+# CodexUserbot module for having some fun with people.
 import asyncio
 import random
 import re
@@ -10,10 +10,10 @@ import requests
 from cowpy import cow
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageEntityMentionName
-from userbot import catub
+from usercodex import codex
 
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers import catmemes
+from ..helpers import codmemes
 from ..helpers.utils import _codutils
 from . import BOTLOG, BOTLOG_CHATID, mention
 
@@ -53,7 +53,7 @@ async def get_user(event):
     return replied_user
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="(\w+)say ([\s\S]*)",
     command=("cowsay", plugin_category),
     info={
@@ -110,9 +110,9 @@ async def get_user(event):
             "{tr}<type>say <text>",
         ],
         "examples": [
-            "{tr}squirrelsay Catuserbot",
-            "{tr}milksay catuserbot",
-            "{tr}ghostbustersghostbusterssay Catuserbot",
+            "{tr}squirrelsay Codexuserbot",
+            "{tr}milksay codexuserbot",
+            "{tr}ghostbustersghostbusterssay Codexuserbot",
         ],
     },
 )
@@ -129,7 +129,7 @@ async def univsaye(cowmsg):
     await edit_or_reply(cowmsg, f"`{cheese.milk(text).replace('`', '´')}`")
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="coin ?([\s\S]*)",
     command=("coin", plugin_category),
     info={
@@ -174,7 +174,7 @@ async def _(event):
         await edit_or_reply(event, r"¯\_(ツ)_/¯")
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="slap(?:\s|$)([\s\S]*)",
     command=("slap", plugin_category),
     info={
@@ -187,7 +187,7 @@ async def who(event):
     replied_user = await get_user(event)
     if replied_user is None:
         return
-    caption = await catmemes.slap(replied_user, event, mention)
+    caption = await codmemes.slap(replied_user, event, mention)
     try:
         await edit_or_reply(event, caption)
     except BaseException:
@@ -196,7 +196,7 @@ async def who(event):
         )
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="(yes|no|maybe|decide)$",
     command=("decide", plugin_category),
     info={
@@ -224,7 +224,7 @@ async def decide(event):
     await _codutils.unsavegif(event, xedoc)
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="shout",
     command=("shout", plugin_category),
     info={
@@ -250,7 +250,7 @@ async def shout(args):
     await edit_or_reply(args, "`" + msg + "`")
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="owo ?([\s\S]*)",
     command=("owo", plugin_category),
     info={
@@ -274,13 +274,13 @@ async def faces(owo):
     reply_text = re.sub(r"(R|L)", "W", reply_text)
     reply_text = re.sub(r"n([aeiou])", r"ny\1", reply_text)
     reply_text = re.sub(r"N([aeiouAEIOU])", r"Ny\1", reply_text)
-    reply_text = re.sub(r"\!+", " " + random.choice(catmemes.UWUS), reply_text)
+    reply_text = re.sub(r"\!+", " " + random.choice(codmemes.UWUS), reply_text)
     reply_text = reply_text.replace("ove", "uv")
-    reply_text += " " + random.choice(catmemes.UWUS)
+    reply_text += " " + random.choice(codmemes.UWUS)
     await edit_or_reply(owo, reply_text)
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="clap(?:\s|$)([\s\S]*)",
     command=("clap", plugin_category),
     info={
@@ -305,7 +305,7 @@ async def claptext(event):
     await edit_or_reply(event, reply_text)
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="smk(?:\s|$)([\s\S]*)",
     command=("smk", plugin_category),
     info={
@@ -333,7 +333,7 @@ async def smrk(smk):
         await edit_or_reply(smk, reply_text)
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="f ([\s\S]*)",
     command=("f", plugin_category),
     info={
@@ -363,7 +363,7 @@ async def payf(event):
     await edit_or_reply(event, pay)
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="wish(?:\s|$)([\s\S]*)",
     command=("wish", plugin_category),
     info={
@@ -390,7 +390,7 @@ async def wish_check(event):
     await edit_or_reply(event, reslt)
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="lfy(?:\s|$)([\s\S]*)",
     command=("lfy", plugin_category),
     info={
@@ -427,7 +427,7 @@ async def _(event):
         )
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="gbun(?:\s|$)([\s\S]*)",
     command=("gbun", plugin_category),
     info={
@@ -440,7 +440,7 @@ async def gbun(event):
     gbunVar = event.text
     gbunVar = gbunVar[6:]
     mentions = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\n`"
-    catevent = await edit_or_reply(event, "**Summoning out le Gungnir ❗️⚜️☠️**")
+    codevent = await edit_or_reply(event, "**Summoning out le Gungnir ❗️⚜️☠️**")
     await asyncio.sleep(3.5)
     chat = await event.get_input_chat()
     async for _ in event.client.iter_participants(
@@ -456,7 +456,7 @@ async def gbun(event):
         idd = reply_message.sender_id
         # make meself invulnerable cuz why not xD
         if idd == 1035034432:
-            await catevent.edit(
+            await codevent.edit(
                 "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 69$ to my master__ [π.$](tg://user?id=1035034432) __to release your account__😏"
             )
         else:
@@ -478,7 +478,7 @@ async def gbun(event):
             else:
                 no_reason = "__Reason: Potential spammer. __"
                 jnl += no_reason
-            await catevent.edit(jnl)
+            await codevent.edit(jnl)
     else:
         mention = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Potential spammer. `"
-        await catevent.edit(mention)
+        await codevent.edit(mention)

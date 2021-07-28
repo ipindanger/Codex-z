@@ -15,7 +15,7 @@ plugin_category = "fun"
         "usage": "{tr}tcod",
     },
 )
-async def hmm(cat):
+async def hmm(cod):
     "Some random cod facial text art"
     reactcat = nekos.textcod()
     await edit_or_reply(cod, reactcat)

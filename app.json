@@ -1,7 +1,7 @@
 {
   "name": "CODEX",
   "description": "A simple Telegram userbot based on Telethon.",
-  "logo": "https://telegra.ph/file/d7b3f78a0082e60bc3ae6.jpg",
+  "logo": "https://telegra.ph/file/3aaf9215b5f9e1ebb8144.jpg",
   "keywords": [
     "plugin",
     "modular",
@@ -14,22 +14,32 @@
     "ALIVE_NAME": {
       "description": "give your name",
       "value": ""
+      "required": false
     },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
+      "required": true
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
+      "required": true
     },
     "STRING_SESSION": {
       "description": "Get this value by running python3 in resources/stringsession/string_session.py locally or https://generatestringsession.KENZO404.repl.run",
       "value": ""
+      "required": true
     },
     "TG_BOT_TOKEN": {
       "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
       "value": ""
+      "required": true
+
+    "TG_BOT_USERNAME": {
+      "description": "Username of the bot you created with @BotFather.",
+      "value": ""
+      "required": true
     },
     "COMMAND_HAND_LER": {
       "description": "Set this one with only one the symbol to use it before your command to run like . , ' `",
@@ -44,16 +54,16 @@
     "HEROKU_API_KEY": {
       "description": "Required for updating the bot and other stuff get it from https://dashboard.heroku.com/account",
       "value": "",
-      "required": false
+      "required": true
     },
     "HEROKU_APP_NAME": {
       "description": "YOUR app name ",
       "value": "",
-      "required": false
+      "required": true
     },
     "TZ": {
       "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-      "value": "Asia/Kolkata",
+      "value": "Asia/jakarta",
       "required": false
     },
     "UPSTREAM_REPO": {

@@ -299,7 +299,7 @@ async def video_catfile(event):  # sourcery no-metrics
     img.save(im)
     im.seek(0)
     await event.client.send_file(event.chat_id, im, reply_to=codid)
-    await catevent.delete()
+    await codevent.delete()
 
 
 @codex.cod_cmd(

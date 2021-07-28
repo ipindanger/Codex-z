@@ -42,5 +42,5 @@ async def quote_search(event):
 )
 async def _(event):
     "Shows random programming quotes"
-    txt = random.choice(catmemes.PROGQUOTES)
+    txt = random.choice(codmemes.PROGQUOTES)
     await edit_or_reply(event, txt)

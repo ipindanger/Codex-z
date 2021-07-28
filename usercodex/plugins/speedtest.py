@@ -5,7 +5,7 @@ Available Options: image, file, text"""
 from time import time
 
 import speedtest
-from userbot import catub
+from usercodex import codex
 
 from ..core.managers import edit_or_reply
 from ..helpers.utils import reply_id
@@ -23,7 +23,7 @@ def convert_from_bytes(size):
     return f"{round(size, 2)} {units[n]}"
 
 
-@catub.cat_cmd(
+@codex.cod_cmd(
     pattern="speedtest(?:\s|$)([\s\S]*)",
     command=("speedtest", plugin_category),
     info={
@@ -50,7 +50,7 @@ async def _(event):
         as_document = True
     elif input_str == "text":
         as_text = True
-    catevent = await edit_or_reply(
+    codevent = await edit_or_reply(
         event, "`Calculating my internet speed. Please wait!`"
     )
     start = time()
@@ -72,7 +72,7 @@ async def _(event):
         response = s.results.share()
         speedtest_image = response
         if as_text:
-            await catevent.edit(
+            await codevent.edit(
                 """`SpeedTest completed in {} seconds`
 `Download: {} (or) {} MB/s`
 `Upload: {} (or) {} MB/s`
@@ -100,7 +100,7 @@ async def _(event):
             )
             await event.delete()
     except Exception as exc:
-        await catevent.edit(
+        await codevent.edit(
             """**SpeedTest** completed in {} seconds
 Download: {} (or) {} MB/s
 Upload: {} (or) {} MB/s

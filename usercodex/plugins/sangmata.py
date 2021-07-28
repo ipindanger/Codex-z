@@ -62,7 +62,7 @@ async def _(event):  # sourcery no-metrics
     cmd = event.pattern_match.group(1)
     check = usernames if cmd == "u" else names
     for i in check:
-        if sandy:
+        if xedoc:
             await event.reply(i, parse_mode=_format.parse_pre)
         else:
             await codevent.edit(i, parse_mode=_format.parse_pre)

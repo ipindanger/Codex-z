@@ -7,8 +7,6 @@ from telethon.utils import get_display_name
 
 from usercodex import codex
 
-from . import BOTLOG, BOTLOG_CHATID
-
 plugin_category = "admin"
 
 

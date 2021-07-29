@@ -4,12 +4,9 @@ from datetime import datetime
 
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
-from telethon.tl import functions, types
 from telethon.utils import get_display_name
 
-from ..helpers.utils import _format
 from usercodex import codex
-
 
 plugin_category = "admin"
 

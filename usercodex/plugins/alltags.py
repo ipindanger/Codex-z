@@ -7,6 +7,7 @@ from telethon.tl.types import ChannelParticipantCreator as owner
 from telethon.utils import get_display_name
 
 from usercodex import codex
+
 from . import BOTLOG, BOTLOG_CHATID
 
 plugin_category = "admin"
@@ -53,9 +54,9 @@ async def set_time(event):
         else:
             endtime += f"{m}m {s}s" if m > 0 else f"{s}s"
     current_message = event.message.message
-    if (("endtags" not in current_message) or (f"{tr}endtags" not in current_message)) and (
-        "on" in TAGS_.USRTAGS_ON
-    ):
+    if (
+        ("endtags" not in current_message) or (f"{tr}endtags" not in current_message)
+    ) and ("on" in TAGS_.USRTAGS_ON):
         shite = await event.client.send_message(
             event.chat_id,
             "`Plugin Tag has Stopped for " + endtime + "`",
@@ -68,10 +69,7 @@ async def set_time(event):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#TAGS `Has Stopped.\n"
-                + " for "
-                + endtime
-                + "`",
+                "#TAGS `Has Stopped.\n" + " for " + endtime + "`",
             )
 
 

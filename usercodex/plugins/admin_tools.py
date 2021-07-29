@@ -3,14 +3,15 @@ import asyncio
 from asyncio import sleep
 
 from telethon.tl.functions.channels import EditBannedRequest
-from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
 from telethon.tl.types import ChannelParticipantsKicked, ChatBannedRights
 from telethon.utils import get_display_name
 
+
 from usercodex import codex
 
+from ..utils import is_admin
 from ..core.logger import logging
 
 plugin_category = "admin"
@@ -35,16 +36,16 @@ LOGS = logging.getLogger(__name__)
 async def allkick(event):
     lynxuser = await event.get_chat()
     lynxget = await event.client.get_me()
-    admin = lynxuser.admin_rights
-    creator = lynxuser.creator
-    if not admin and not creator:
+    user = await event.get_user()
+    codadmin = await is_admin(event.client, event.chat_id, event.client.uid)
+    if not codadmin:
         await event.edit(
             "`#Disclaimer ❌\nThis plugin is specifically for Owners and Co-Founders.`"
         )
         return
     await event.edit("`in Process...`")
 
-    everyone = await event.client.get_participants(GetFullUserRequest(event.chat_id))
+    everyone = await event.client.get_participants(event.chat_id)
     for user in everyone:
         if user.id == lynxget.id:
             pass

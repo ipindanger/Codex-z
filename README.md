@@ -14,7 +14,7 @@
    <i> Codex is a <mark>Robot with asyncio python 3 MProto library to interact with Telegram's API as a user or through a bot account (bot API alternative).</mark> Codex based using Telethon Developed by</i> <strong> [ LonamiWebs ] </strong>
 
    <br><details>
-   <br><summary><b> Function </b></summary> <br />
+   <br><summary><b> Function </b></summary>
    <i><b>Codex</b> is very useful for purposes in the telegram application, it can be for personal use or managing a group.</i>
        <br>
        <br>

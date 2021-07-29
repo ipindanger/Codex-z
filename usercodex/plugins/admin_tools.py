@@ -2,63 +2,14 @@
 import asyncio
 from asyncio import sleep
 
-from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
-from telethon.tl.types import ChannelParticipantsKicked, ChatBannedRights
 from telethon.utils import get_display_name
 
 from usercodex import codex
 
-from ..core.logger import logging
 
 plugin_category = "admin"
-
-LOGS = logging.getLogger(__name__)
-
-
-@codex.cod_cmd(
-    pattern="allkick(?:\s|$)([\s\S]*)",
-    command=("allkick", plugin_category),
-    info={
-        "header": "Kick all the members in the group.",
-        "description": "This feature is only for Owners and Co-Founders.",
-        "usage": [
-            "{tr}allkick in ur group.",
-        ],
-        "examples": "{tr}allkick and see.",
-    },
-    groups_only=True,
-    require_admin=True,
-)
-async def allkick(event):
-    chat = await event.get_chat()
-    codget = await event.client.get_me()
-    admin = chat.admin_rights
-    creator = chat.creator
-    if not admin and not creator:
-        await event.edit(
-            "`#Disclaimer ❌\nThis plugin is specifically for Owners and Co-Founders.`"
-        )
-        return
-    await event.edit("`in Process...`")
-
-    everyone = await event.client.get_participants(event.chat_id)
-    for user in everyone:
-        if user.id == codget.id:
-            pass
-        try:
-            await event.client(
-                EditBannedRequest(
-                    event.chat_id,
-                    int(user.id),
-                    ChatBannedRights(until_date=None, view_messages=True),
-                )
-            )
-        except Exception as e:
-            await event.edit(str(e))
-        await sleep(0.5)
-    await event.edit(f"#Successfully ☑️\nYou have kicked All Members here.")
 
 
 def user_list(l, n):
@@ -70,15 +21,14 @@ def user_list(l, n):
     pattern="alltags(?:\s|$)([\s\S]*)",
     command=("alltags", plugin_category),
     info={
-        "header": "Tags all the members in the group.",
-        "description": "This feature is only for Admin Group",
+        "header": "Tag all members in the group.",
+        "description": "This feature is to tag members in the group, including owner and admin.",
         "usage": [
             "{tr}alltags in group.",
         ],
         "examples": "{tr}alltags and see.",
     },
     groups_only=True,
-    require_admin=True,
 )
 async def alltags(event):
     text = (event.pattern_match.group(1)).strip()
@@ -95,14 +45,14 @@ async def alltags(event):
             ):
                 users.append(f"[{get_display_name(x)}](tg://user?id={x.id})")
             if isinstance(x.participant, admin):
-                users.append(f"👮 [{get_display_name(x)}](tg://user?id={x.id})")
+                users.append(f"👮 Admin: [{get_display_name(x)}](tg://user?id={x.id})")
             if isinstance(x.participant, owner):
-                users.append(f"🤴 [{get_display_name(x)}](tg://user?id={x.id})")
+                users.append(f"🤴 Owner: [{get_display_name(x)}](tg://user?id={x.id})")
 
     mentions = list(user_list(users, 6))
     for mention in mentions:
         try:
-            mention = " | ".join(map(str, mention))
+            mention = "  |  ".join(map(str, mention))
             if text:
                 mention = f"{text}\n{mention}"
             if event.reply_to_msg_id:
@@ -118,33 +68,3 @@ async def alltags(event):
             pass
 
     await event.delete()
-
-
-@codex.cod_cmd(
-    pattern="allunban(?:\s|$)([\s\S]*)",
-    command=("allunban", plugin_category),
-    info={
-        "header": "Delete the list of tires in the group.",
-        "description": "This feature is only for Admin Group",
-        "usage": [
-            "{tr}allunban in your groups.",
-        ],
-        "examples": "{tr}allunban and see.",
-    },
-    groups_only=True,
-)
-async def _(event):
-    await event.edit("Looking for a List Banning...")
-    p = 0
-    (await event.get_chat()).title
-    async for i in event.client.iter_participants(
-        event.chat_id,
-        filter=ChannelParticipantsKicked,
-        aggressive=True,
-    ):
-        try:
-            await event.client.edit_permissions(event.chat_id, i, view_messages=True)
-            p += 1
-        except BaseException:
-            pass
-    await event.edit("Success, The list of all tires in this group has been removed.")

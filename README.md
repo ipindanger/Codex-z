@@ -7,22 +7,27 @@
 <br />
 
 
-## <h3 align="center"> About Codex </h3>
+## <h3 align="left"> About </h3>
 
-<details>
+<details><summary><strong> Codex </strong></summary>
+   <br>
+   <br>
+   <details>
    <summary><b> Description </b></summary> <br />
    <i> Codex is a <mark>Robot with asyncio python 3 MProto library</mark>, based using Telethon Developed by</i> <strong> [ LonamiWebs ] </strong>
-</details>
+    </details>
 
-<details>
+   <details>
    <summary><b> Function </b></summary> <br />
    <i><b>Codex</b> is very useful for purposes in the telegram application, it can be for personal use or managing a group.</i>
        <br>
        <br>
    <b>Note: <i>If you are already using codex, don't forget to read our disclaimer, thank you.</i> </b>
+   </details>
+
 </details>
 
-# <h3 align="center"> Codex Stuff </h3>
+# <h3 align="left"> Codex Stuff </h3>
 
 <details>
   <summary><b> Get Stuff </b></summary>
@@ -49,7 +54,7 @@
 </details>
 <br />
 
-## <h3 align="center"> Disclaimer </h3>
+## <h3 align="left"> Disclaimer </h3>
 
 <details>
    <summary><strong> Details </strong></summary>
@@ -79,9 +84,13 @@ and you ended up in a Finale Battle with Telegram and at the end
 ### FYI
 ```This repository has been approved by Jisan09 (badcat)```
 
-## Special Credits ©
+# Special Credits ©
 
 * [sandy1709](https://github.com/sandy1709/) - [goodcat](https://github.com/sandy1709/catuserbot) 🇮🇳
 * [Md Jisan](https://github.com/Jisan09/) - [badcat](https://github.com/Jisan09/catuserbot) 🇮🇳
 * [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
 # [![Sparkline](https://stars.medv.io/Lonamiwebs/telethon.svg)](https://stars.medv.io/Lonamiwebs/telethon)
+
+
+# License 
+Codex is License under [BSD 3-Clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause)

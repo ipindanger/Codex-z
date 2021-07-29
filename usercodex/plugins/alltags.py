@@ -125,7 +125,7 @@ async def alltags(event):
                 await event.client.send_message(event.chat_id, mention)
 
             TAGS_.tags_time = datetime.now()
-            TAGS_.tags_on = True
+            TAGS_.tags_on = False
             limit += 6
             await asyncio.sleep(2)
         except BaseException:
@@ -143,8 +143,7 @@ async def alltags(event):
 async def alltags(event):
     TAGS_.tags_start = datetime.now()
     TAGS_.tags_end = TAGS_.tags_start.replace(microsecond=0)
-    if TAGS_.tags_on:
-        TAGS_.tags_on = False
+    if TAGS_.tags_on is False:
         msg = await event.edit("Plugin Tags has stopped.")
         await asyncio.sleep(3)
         await msg.delete()

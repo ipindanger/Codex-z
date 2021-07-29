@@ -1,13 +1,11 @@
 # Port by kenzo
 import asyncio
-from asyncio import sleep
 
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
 from telethon.utils import get_display_name
 
 from usercodex import codex
-
 
 plugin_category = "admin"
 

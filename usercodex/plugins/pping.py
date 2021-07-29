@@ -2,10 +2,10 @@
 # ported to CatUB 3.0.0 by t.me/o_s_h_o_r_a_j
 # Re-edited by t.me/Vinu_003
 
-
 import os
+import asyncio
 from datetime import datetime
-
+from ..core.managers import edit_or_reply
 from usercodex import codex
 
 from . import hmention, reply_id
@@ -47,10 +47,11 @@ async def _(event):
         "html",
     )
     end = datetime.now()
+    await asyncio.sleep(2.5)
     await cod.delete()
     ms = (end - start).microseconds / 1000
     if PING_PIC:
-        caption = f"<b><i>{ PING_TEXT}<i><b>\n<code> {ms} ms</code>\n <b><i>  Aѵҽղցҽɾ  ☞  {hmention}</b></i>"
+        caption = f"<b><i>{PING_TEXT}<i><b>\n<code> {ms} ms</code>\n <b><i>  Aѵҽղցҽɾ  ☞  {hmention}</b></i>"
         await event.client.send_file(
             event.chat_id,
             PING_PIC,
@@ -61,4 +62,4 @@ async def _(event):
             allow_cache=True,
         )
     else:
-        await event.edit_or_reply(event, "<code>Add PING_PIC first nubh.<code>", "html")
+        await edit_or_reply(event, "<code>Add PING_PIC first nubh.<code>", "html")

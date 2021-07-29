@@ -74,12 +74,12 @@ async def alltags(event):
                 await event.client.send_message(
                     event.chat_id, mention, reply_to=event.reply_to_msg_id
                 )
-            TAGS_.tags_time = datetime.now()
-            TAGS_.tags_on = True
 
             else:
                 await event.client.send_message(event.chat_id, mention)
 
+            TAGS_.tags_time = datetime.now()
+            TAGS_.tags_on = True
             limit += 6
             await asyncio.sleep(2)
         except BaseException:

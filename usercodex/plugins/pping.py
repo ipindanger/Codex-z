@@ -1,15 +1,13 @@
-
-
-#pping -> ping with pic
+# pping -> ping with pic
 # ported to CatUB 3.0.0 by t.me/o_s_h_o_r_a_j
-#Re-edited by t.me/Vinu_003
+# Re-edited by t.me/Vinu_003
 
 
 import os
-import asyncio
 from datetime import datetime
 
 from usercodex import codex
+
 from . import hmention, reply_id
 
 """
@@ -21,7 +19,10 @@ except:
 plugin_category = "extra"
 
 PING_PIC = os.environ.get("PING_PIC")  # or Config.PING_PIC
-PING_TEXT = os.environ.get("CUSTOM_PING_TEXT", None) or " 𝔓𝔢𝔯𝔣𝔢𝔠𝔱𝔩𝔶 𝔅𝔞𝔩𝔞𝔫𝔠𝔢𝔡, 𝔞𝔰 𝔞𝔩𝔩 𝔱𝔥𝔦𝔰 𝔰𝔥𝔬𝔲𝔩𝔡 𝔟𝔢 !! \n " 
+PING_TEXT = (
+    os.environ.get("CUSTOM_PING_TEXT", None)
+    or " 𝔓𝔢𝔯𝔣𝔢𝔠𝔱𝔩𝔶 𝔅𝔞𝔩𝔞𝔫𝔠𝔢𝔡, 𝔞𝔰 𝔞𝔩𝔩 𝔱𝔥𝔦𝔰 𝔰𝔥𝔬𝔲𝔩𝔡 𝔟𝔢 !! \n "
+)
 
 
 @codex.cod_cmd(
@@ -30,7 +31,9 @@ PING_TEXT = os.environ.get("CUSTOM_PING_TEXT", None) or " 𝔓𝔢𝔯𝔣𝔢�
     info={
         "header": "check how long it takes to ping your userbot.",
         "option": "To show media in this cmd you need to set PING_PIC with media link, get this by replying the media by .tgm",
-        "usage": ["{tr}pping", ],
+        "usage": [
+            "{tr}pping",
+        ],
     },
 )
 async def _(event):
@@ -38,7 +41,11 @@ async def _(event):
         return
     reply_to_id = await reply_id(event)
     start = datetime.now()
-    cod = await edit_or_reply(event, "<b><i>“Everyone fails at who they are supposed to be. The measure of a person, of a hero…is how well they succeed at being who they are” !! ⚡ </b></i>", "html")
+    cod = await edit_or_reply(
+        event,
+        "<b><i>“Everyone fails at who they are supposed to be. The measure of a person, of a hero…is how well they succeed at being who they are” !! ⚡ </b></i>",
+        "html",
+    )
     end = datetime.now()
     await cod.delete()
     ms = (end - start).microseconds / 1000
@@ -55,5 +62,3 @@ async def _(event):
         )
     else:
         await event.edit_or_reply(event, "<code>Add PING_PIC first nubh.<code>", "html")
-
-

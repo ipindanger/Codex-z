@@ -1,13 +1,13 @@
-<div align="center">
+<h1 align="center">
 <img alt="CodeXuser" height="260" width="100%" src="https://github.com/Codex51/Codex/raw/master/resources/photos/CodeXuser.jpg"
    width="100" height="100"
    align="right">
 <br />
-</div>
+</h1>
 <br />
 
 
-# <h3 align="center"> About Codex </h3>
+## <h3 align="center"> About Codex </h3>
 
 <details>
    <summary><b> Description </b></summary> <br />

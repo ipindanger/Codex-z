@@ -55,7 +55,7 @@ async def startup_process():
     )
     print("========================================")
     print(usercodex.__copyright__)
-    print("Licensed under the terms of the " + usercodex.__license__)
+    print("Licensed: " + usercodex.__license__)
     await verifyLoggerGroup()
     await add_bot_to_logger_group(BOTLOG_CHATID)
     if PM_LOGGER_GROUP_ID != -100:

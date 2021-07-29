@@ -93,4 +93,4 @@ and you ended up in a Finale Battle with Telegram and at the end
 
 
 # License 
-Codex is License under [BSD 3-Clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause)
+Codex is License under [The 3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)

@@ -88,7 +88,7 @@ async def amireallyalive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
     EMOJI = gvarstatus("ALIVE_EMOJI") or "✧✧"
-    cod_caption = f"**Codexuserbot is Up and Running**\n"
+    cod_caption = f"**Codex is Up and Running**\n"
     cod_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
     cod_caption += f"**{EMOJI} Codex Version :** `{codversion}`\n"
     cod_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"

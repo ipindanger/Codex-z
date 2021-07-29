@@ -8,11 +8,10 @@ from telethon.tl.types import ChannelParticipantCreator as owner
 from telethon.tl.types import ChannelParticipantsKicked, ChatBannedRights
 from telethon.utils import get_display_name
 
-
 from usercodex import codex
 
-from ..utils import is_admin
 from ..core.logger import logging
+from ..utils import is_admin
 
 plugin_category = "admin"
 
@@ -34,7 +33,7 @@ LOGS = logging.getLogger(__name__)
     require_admin=True,
 )
 async def allkick(event):
-    lynxuser = await event.get_chat()
+    await event.get_chat()
     lynxget = await event.client.get_me()
     user = await event.get_user()
     codadmin = await is_admin(event.client, event.chat_id, event.client.uid)

@@ -65,7 +65,7 @@ async def startupmessage():
         if BOTLOG:
             Config.CODEXLOGO = await codex.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/4fe6e55b065b14affa246.jpg",
+                "https://telegra.ph/file/c6f5ed625c0fb1c2480f7.jpg",
                 caption="**Your CodexUserbot has been started successfully.**",
                 buttons=[(Button.url("Support", "https://t.me/CodexSupport"),)],
             )

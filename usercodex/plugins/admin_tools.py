@@ -2,6 +2,7 @@
 import asyncio
 from asyncio import sleep
 
+from telethon.tl.types import PeerChat
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
@@ -33,13 +34,11 @@ LOGS = logging.getLogger(__name__)
     require_admin=True,
 )
 async def allkick(event):
-    lynxuser = await event.get_chat()
-    lynxget = await event.client.get_me()
-    user = await event.get_user()
-    codadmin = await is_admin(event.chat_id)
-    admin = lynxuser.admin_rights
-    creator = lynxuser.creator
-    if not codadmin and not admin and not creator:
+    chat = await event.get_chat()
+    codget = await event.client.get_me()
+    admin = chat.admin_rights
+    creator = chat.creator
+    if not admin and not creator:
         await event.edit(
             "`#Disclaimer ❌\nThis plugin is specifically for Owners and Co-Founders.`"
         )
@@ -48,7 +47,7 @@ async def allkick(event):
 
     everyone = await event.client.get_participants(event.chat_id)
     for user in everyone:
-        if user.id == lynxget.id:
+        if user.id == codget.id:
             pass
         try:
             await event.client(

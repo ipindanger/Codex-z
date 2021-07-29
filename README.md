@@ -9,12 +9,12 @@
 
 ## <h3 align="left"> About </h3>
 
-<details><summary><strong> Codex </strong></summary>
+<details><summary><strong> What is Codex ? </strong></summary>
    <br>
    <br>
    <details>
    <summary><b> Description </b></summary> <br />
-   <i> Codex is a <mark>Robot with asyncio python 3 MProto library</mark>, based using Telethon Developed by</i> <strong> [ LonamiWebs ] </strong>
+   <i> Codex is a <mark>Robot with asyncio python 3 MProto library to interact with Telegram's API as a user or through a bot account (bot API alternative).</mark> Codex based using Telethon Developed by</i> <strong> [ LonamiWebs ] </strong>
     </details>
 
    <details>

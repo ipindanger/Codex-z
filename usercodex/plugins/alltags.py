@@ -1,13 +1,27 @@
 # Port by kenzo
 import asyncio
+from datetime import datetime
 
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
+from telethon.tl import functions, types
 from telethon.utils import get_display_name
 
+from ..helpers.utils import _format
 from usercodex import codex
 
+
 plugin_category = "admin"
+
+
+class TAGS:
+    def __init__(self):
+        self.tags_time = None
+        self.tags_start = {}
+        self.tags_end = {}
+
+
+TAGS_ = TAGS()
 
 
 def user_list(l, n):
@@ -29,6 +43,11 @@ def user_list(l, n):
     groups_only=True,
 )
 async def alltags(event):
+    TAGS_.tags_time = None
+    TAGS_.tags_end = {}
+    start_1 = datetime.now()
+    TAGS_.tags_on = True
+    TAGS_.tags_start = start_1.replace(microsecond=0)
     text = (event.pattern_match.group(1)).strip()
     users = []
     limit = 0
@@ -66,3 +85,18 @@ async def alltags(event):
             pass
 
     await event.delete()
+
+
+@codex.cod_cmd(
+    pattern="endtags$",
+    edited=False,
+    groups_only=True,
+)
+async def endtags(event):
+    if TAGS_.tags_on is False:
+        return
+    TAGS_.tags_start = datetime.now()
+    TAGS_.tags_end = start_1.replace(microsecond=0)
+    msg = await event.edit("Plugin Tags has stopped.")
+    await asyncio.sleep(3)
+    await msg.delete()

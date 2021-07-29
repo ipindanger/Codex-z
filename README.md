@@ -2,10 +2,12 @@
 <img alt="CodeXuser" height="260" width="100%" src="https://github.com/Codex51/Codex/raw/master/resources/photos/CodeXuser.jpg"
    width="100" height="100"
    align="right">
+<br />
 </div>
 <br />
 
-# <h3 align="left"> About Codex </h3>
+
+# <h3 align="center"> About Codex </h3>
 
 <details>
    <summary><b> Description </b></summary> <br />
@@ -20,7 +22,7 @@
    <b>Note: <i>If you are already using codex, don't forget to read our disclaimer, thank you.</i> </b>
 </details>
 
-# <h3 align="left"> Codex Stuff: </h3>
+# <h3 align="center"> Codex Stuff </h3>
 
 <details>
   <summary><b> Get Stuff </b></summary>
@@ -47,7 +49,7 @@
 </details>
 <br />
 
-## <h3 align="left"> Disclaimer </h3>
+## <h3 align="center"> Disclaimer </h3>
 
 <details>
    <summary><strong> Details </strong></summary>

@@ -48,12 +48,14 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("========================================")
-    print("Yay your userbot is officially working.!!!")
+    print("Okay, Codex is Officially Working.!!!")
     print(
-        f"Congratulation, now type {cmdhr}alive to see message if codex is live\
+        f"Now type {cmdhr}alive to see message if codex is live\
         \nIf you need assistance."
     )
     print("========================================")
+    print(usercodex.__copyright__)
+    print("Licensed under the terms of the " + usercodex.__license__)
     await verifyLoggerGroup()
     await add_bot_to_logger_group(BOTLOG_CHATID)
     if PM_LOGGER_GROUP_ID != -100:

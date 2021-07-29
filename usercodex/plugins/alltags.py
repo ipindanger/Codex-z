@@ -30,6 +30,7 @@ def user_list(l, n):
 
 
 @codex.cod_cmd(incoming=True, edited=False)
+async def set_time(event):
     if TAGS_.tags_on is False:
         return
     tags_start = datetime.now()

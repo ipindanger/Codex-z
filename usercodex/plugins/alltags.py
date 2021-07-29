@@ -93,7 +93,7 @@ async def endtags(event):
     if TAGS_.tags_on is False:
         return
     TAGS_.tags_start = datetime.now()
-    TAGS_.tags_end = start_1.replace(microsecond=0)
+    TAGS_.tags_end = TAGS_.tags_start.replace(microsecond=0)
     msg = await event.edit("Plugin Tags has stopped.")
     await asyncio.sleep(3)
     await msg.delete()

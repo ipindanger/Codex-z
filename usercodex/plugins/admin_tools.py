@@ -2,7 +2,6 @@
 import asyncio
 from asyncio import sleep
 
-from telethon.tl.types import PeerChat
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
@@ -12,7 +11,6 @@ from telethon.utils import get_display_name
 from usercodex import codex
 
 from ..core.logger import logging
-from ..utils import is_admin
 
 plugin_category = "admin"
 

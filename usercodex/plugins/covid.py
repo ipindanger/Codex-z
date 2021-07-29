@@ -35,11 +35,21 @@ async def corona(event):
         data += f"\n⚠️ <code>Confirmed   :</code> <code>{hmm1}</code>"
         data += f"\n😔 <code>Active      :</code> <code>{country_data['active']}</code>"
         data += f"\n⚰️ <code>Deaths      :</code> <code>{hmm2}</code>"
-        data += f"\n🤕 <code>Critical    :</code> <code>{country_data['critical']}</code>"
-        data += f"\n😊 <code>Recovered   :</code> <code>{country_data['recovered']}</code>"
-        data += f"\n💉 <code>Total tests :</code> <code>{country_data['total_tests']}</code>"
-        data += f"\n🥺 <code>New Cases   :</code> <code>{country_data['new_cases']}</code>"
-        data += f"\n😟 <code>New Deaths  :</code> <code>{country_data['new_deaths']}</code>"
+        data += (
+            f"\n🤕 <code>Critical    :</code> <code>{country_data['critical']}</code>"
+        )
+        data += (
+            f"\n😊 <code>Recovered   :</code> <code>{country_data['recovered']}</code>"
+        )
+        data += (
+            f"\n💉 <code>Total tests :</code> <code>{country_data['total_tests']}</code>"
+        )
+        data += (
+            f"\n🥺 <code>New Cases   :</code> <code>{country_data['new_cases']}</code>"
+        )
+        data += (
+            f"\n😟 <code>New Deaths  :</code> <code>{country_data['new_deaths']}</code>"
+        )
         await codevent.edit(
             "<b>Corona Virus Info of {}:\n{}</b>".format(country, data),
             parse_mode="html",

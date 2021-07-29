@@ -11,14 +11,10 @@
 
 <details><summary><strong> What is Codex ? </strong></summary>
    <br>
-   <br>
-   <details>
-   <summary><b> Description </b></summary> <br />
    <i> Codex is a <mark>Robot with asyncio python 3 MProto library to interact with Telegram's API as a user or through a bot account (bot API alternative).</mark> Codex based using Telethon Developed by</i> <strong> [ LonamiWebs ] </strong>
-    </details>
 
-   <details>
-   <summary><b> Function </b></summary> <br />
+   <br><details>
+   <br><summary><b> Function </b></summary> <br />
    <i><b>Codex</b> is very useful for purposes in the telegram application, it can be for personal use or managing a group.</i>
        <br>
        <br>
@@ -30,27 +26,36 @@
 # <h3 align="left"> Codex Stuff </h3>
 
 <details>
-  <summary><b> Get Stuff </b></summary>
-  <br />
-
-  <details><summary><b> String Session </b></summary> <br />
+  <summary><b> Get Stuffs </b></summary><br>
+  <p><i> Following are the materials for using Codex (Bot)</i>
+  </p>
+  <br>
+  <details>
+    <br><summary><b> Get STRING_SESSION </b></summary>
     <p align="left">
        <i> No Using API_ID & API_HASH </i>
        <a href="https://replit.com/@KENZO404/Lynx-String-Session#main.py"><img src="https://img.shields.io/badge/generate_string-via_replit-white?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
     </p>
-  </details>
+  </details><br>
 
-  <details><summary><b> Get TG_BOT_TOKEN </b></summary> <br />
+  <details><summary><b> Get TG_BOT_TOKEN </b></summary> <br>
     <p align="left">
        <p> Please go to telegram, and search for <strong>@BotFather</strong>, then create your bot name and your bot username, then type /mybots then press your bot name then select API TOKEN, then copy your bot token and fill it in vars. </p>
     </p>
-    </details>
+    </details><br>
+
+  <details><summary><b> Get HEROKU_API_KEY </b></summary> <br>
+    <p align="left">
+       <p> First of all create your heroku account, if you have completed registration, please go to settings on heroku, then look for the one that says API Key then press reveal, done. </p>
+    </p>
+   </details><br>
 
   <details><summary><b> Deployment </b></summary> <br />
+    <p> Deploy using heroku, and don't forget to register first. </p>
     <p align="left">
        <a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FCodex51%2FCodex"><img src="https://img.shields.io/badge/deploy_to_heroku-white?style=for-the-badge&logo=heroku.cd" alt="go_heroku" /></a>
     </p>
-  </details>
+  </details><br>
 </details>
 <br />
 

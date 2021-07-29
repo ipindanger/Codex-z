@@ -136,14 +136,15 @@ async def alltags(event):
 
 @codex.cod_cmd(
     pattern="endtags$",
-    outgoing=True,
     edited=False,
     groups_only=True,
 )
-async def alltags(event):
+async def endtags(event):
+    text = (event.pattern_match.group(1)).strip()
     TAGS_.tags_start = datetime.now()
     TAGS_.tags_end = TAGS_.tags_start.replace(microsecond=0)
-    if TAGS_.tags_on is False:
+    if text:
+        TAGS_.tags_on = False
         msg = await event.edit("Plugin Tags has stopped.")
         await asyncio.sleep(3)
         await msg.delete()

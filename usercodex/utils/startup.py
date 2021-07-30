@@ -66,8 +66,8 @@ async def startupmessage():
             Config.CODLOGO = await codex.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/c6f5ed625c0fb1c2480f7.jpg",
-                caption="**Your CodexUserbot has been started successfully.**",
-                buttons=[(Button.url("Support", "https://t.me/CodexSupport"),)],
+                caption="**Codex has been started successfully.**",
+                buttons=[(Button.url("Support", "https://t.me/CodexSupportGroup"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -83,7 +83,7 @@ async def startupmessage():
         if msg_details:
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
-            text = f"`Codex` **is Back and Running...**\n\n"
+            text = f"[Codex](t.me/CodexUserbot) **is Back up and Running...**\n\n"
             text += f"`Telethon :` __v{version.__version__}__\n"
             text += f"`Python   :` __v{python_version()}__\n"
             text += f"`Codex    :`  __v{codversion}__\n"

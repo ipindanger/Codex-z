@@ -63,7 +63,7 @@ async def startupmessage():
     """
     try:
         if BOTLOG:
-            Config.CODEXLOGO = await codex.tgbot.send_file(
+            Config.CODLOGO = await codex.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/c6f5ed625c0fb1c2480f7.jpg",
                 caption="**Your CodexUserbot has been started successfully.**",
@@ -83,10 +83,10 @@ async def startupmessage():
         if msg_details:
             await codex.check_testcases()
             message = await codex.get_messages(msg_details[0], ids=msg_details[1])
-            text = f"`CodexUserbot` **is Back and Running...**\n\n"
-            text += f"`Telethon version:` __{version.__version__}__\n"
-            text += f"`Python Version  :` __{python_version()}__\n"
-            text += f"`Codex Version   :`  __{codversion}__\n"
+            text = f"`Codex` **is Back and Running...**\n\n"
+            text += f"`Telethon :` __v{version.__version__}__\n"
+            text += f"`Python   :` __v{python_version()}__\n"
+            text += f"`Codex    :`  __v{codversion}__\n"
             await codex.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await codex.send_message(
@@ -213,7 +213,7 @@ async def verifyLoggerGroup():
     else:
         descript = "Don't delete this group or change to group(If you change group all your previous snips, welcome will be lost.)"
         _, groupid = await create_supergroup(
-            "CodexUserbot (LOGS Group)", codex, Config.TG_BOT_USERNAME, descript
+            "Codex (LOGS Group)", codex, Config.TG_BOT_USERNAME, descript
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print(

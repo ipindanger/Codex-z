@@ -71,12 +71,19 @@ async def amireallyalive(event):
         await edit_or_reply(
             event,
             f"**{ALIVE_TEXT}**\n\n"
-            f"**{EMOJI} User : {mention}**\n"
-            f"**{EMOJI} Uptime :** `{uptime}\n`"
-            f"**{EMOJI} Telethon Version :** `{version.__version__}\n`"
-            f"**{EMOJI} Codex Version :** `{codversion}`\n"
-            f"**{EMOJI} Python Version :** `{python_version()}\n`"
-            f"**{EMOJI} Database :** `{check_sgnirts}`\n",
+            f"=================================\n"
+            f"**{EMOJI}** `User :` **{mention}**\n"
+            f"`— — — — — >`\n"
+            f"**{EMOJI}** `Uptime :` __{uptime}__\n"
+            f"`— — — — — — — >`\n"
+            f"**{EMOJI}** `Codex    :` __v{codversion}__\n"
+            f"`— — — — — — — — >`\n"
+            f"**{EMOJI}** `Telethon   :` __v{version.__version__}__\n"
+            f"`— — — — — — — — — — >`\n"
+            f"**{EMOJI}** `Python       :` __v{python_version()}__\n"
+            f"`— — — — — — — — — — — — >`\n"
+            f"**{EMOJI}** `Database       :` __{check_sgnirts}__\n"
+            f"=================================\n",
         )
 
 

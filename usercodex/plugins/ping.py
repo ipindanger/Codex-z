@@ -8,6 +8,7 @@ plugin_category = "tools"
 
 
 @codex.cod_cmd(
+@bot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
     pattern="ping( -a|$)",
     command=("ping", plugin_category),
     info={
@@ -41,6 +42,7 @@ async def _(event):
 
 
 @codex.cod_cmd(
+@bot.on(sudo_cmd(pattern="fping$", allow_sudo=True))
     pattern="fping$",
     command=("fping", plugin_category),
     info={"header": "Shows the server ping with extra animation", "usage": "{tr}fping"},

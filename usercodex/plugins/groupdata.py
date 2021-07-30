@@ -39,7 +39,7 @@ plugin_category = "utils"
             "{tr}admins <username/userid>",
             "{tr}admins <in group where you need>",
         ],
-        "examples": "{tr}admins @CodexSupport",
+        "examples": "{tr}admins @CodexSupportGroup",
     },
 )
 async def _(event):
@@ -94,7 +94,7 @@ async def _(event):
             "{tr}bots <username/userid>",
             "{tr}bots <in group where you need>",
         ],
-        "examples": "{tr}bots @CodexSupport",
+        "examples": "{tr}bots @CodexSupportGroup",
     },
 )
 async def _(event):
@@ -186,7 +186,7 @@ async def get_users(show):
             "{tr}chatinfo <username/userid>",
             "{tr}chatinfo <in group where you need>",
         ],
-        "examples": "{tr}chatinfo @CodexSupport",
+        "examples": "{tr}chatinfo @CodexSupportGroup",
     },
 )
 async def info(event):

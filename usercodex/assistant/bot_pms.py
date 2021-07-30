@@ -106,7 +106,7 @@ async def bot_start(event):
             start_msg = f"Hey! 👤{mention},\
                         \nI am {my_mention}'s assistant bot.\
                         \nYou can contact to my master from here.\
-                        \n\nPowered by [Codex](https://t.me/CodexSupport)"
+                        \n\nPowered by [Codex](https://t.me/CodexSupportGroup)"
         buttons = [
             (
                 Button.url("Repo", "https://github.com/Codex51/Codex"),

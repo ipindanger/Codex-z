@@ -36,7 +36,7 @@ def weird_division(n, d):
         "header": "Shows you the complete media/file summary of the that group.",
         "description": "As of now limited to last 10000 in the group u used",
         "usage": "{tr}chatfs <Username/id>",
-        "examples": "{tr}chatfs @CodexSupport",
+        "examples": "{tr}chatfs @CodexSupportGroup",
     },
 )
 async def _(event):  # sourcery no-metrics

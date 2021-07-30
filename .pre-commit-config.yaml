@@ -1,5 +1,16 @@
-- repo: git://github.com/FalconSocial/pre-commit-python-sorter
-  sha: 1.0.4
-  hooks:
-  - id: python-import-sorter
-    args: ['--silent-overwrite']
+repos:
+    - repo: https://github.com/pre-commit-ci/pre-commit-ci-config
+      rev: v1.4.0
+      hooks:
+        - id: check-pre-commit-ci-config
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.0.1
+      hooks:
+        - id: check-yaml
+        - id: check-merge-conflict
+        - id: detect-private-key
+    - repo: git://github.com/FalconSocial/pre-commit-python-sorter
+      sha: 1.0.4
+      hooks:
+        - id: python-import-sorter
+          args: ['--silent-overwrite']

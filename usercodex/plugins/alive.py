@@ -45,17 +45,17 @@ async def amireallyalive(event):
         PIC = random.choice(A_IMG)
         cod_caption = f"**{ALIVE_TEXT}**\n\n"
         cod_caption += f"=================================\n"
-        cod_caption += f"**{EMOJI}** `User :` **{mention}**\n"
+        cod_caption += f"{EMOJI} `User :` {mention}\n"
         cod_caption += f"`— — — — — >`\n"
-        cod_caption += f"**{EMOJI}** `Uptime :` __{uptime}__\n"
+        cod_caption += f"{EMOJI} `Uptime :` __{uptime}__\n"
         cod_caption += f"`— — — — — — — >`\n"
-        cod_caption += f"**{EMOJI}** `Codex    :` __v{codversion}__\n"
+        cod_caption += f"{EMOJI} `Codex    :` __v{codversion}__\n"
         cod_caption += f"`— — — — — — — — >`\n"
-        cod_caption += f"**{EMOJI}** `Telethon   :` __v{version.__version__}__\n"
+        cod_caption += f"{EMOJI} `Telethon   :` __v{version.__version__}__\n"
         cod_caption += f"`— — — — — — — — — — >`\n"
-        cod_caption += f"**{EMOJI}** `Python       :` __v{python_version()}__\n"
+        cod_caption += f"{EMOJI} `Python       :` __v{python_version()}__\n"
         cod_caption += f"`— — — — — — — — — — — — >`\n"
-        cod_caption += f"**{EMOJI}** `Database       :` __{check_sgnirts}__\n"
+        cod_caption += f"{EMOJI} `Database       :` __{check_sgnirts}__\n"
         cod_caption += f"=================================\n"
         try:
             await event.client.send_file(
@@ -72,17 +72,17 @@ async def amireallyalive(event):
             event,
             f"**{ALIVE_TEXT}**\n\n"
             f"=================================\n"
-            f"**{EMOJI}** `User :` **{mention}**\n"
+            f"{EMOJI} `User :` {mention}\n"
             f"`— — — — — >`\n"
-            f"**{EMOJI}** `Uptime :` __{uptime}__\n"
+            f"{EMOJI} `Uptime :` __{uptime}__\n"
             f"`— — — — — — — >`\n"
-            f"**{EMOJI}** `Codex    :` __v{codversion}__\n"
+            f"{EMOJI} `Codex    :` __v{codversion}__\n"
             f"`— — — — — — — — >`\n"
-            f"**{EMOJI}** `Telethon   :` __v{version.__version__}__\n"
+            f"{EMOJI} `Telethon   :` __v{version.__version__}__\n"
             f"`— — — — — — — — — — >`\n"
-            f"**{EMOJI}** `Python       :` __v{python_version()}__\n"
+            f"{EMOJI} `Python       :` __v{python_version()}__\n"
             f"`— — — — — — — — — — — — >`\n"
-            f"**{EMOJI}** `Database       :` __{check_sgnirts}__\n"
+            f"{EMOJI} `Database       :` __{check_sgnirts}__\n"
             f"=================================\n",
         )
 
@@ -101,18 +101,19 @@ async def amireallyalive(event):
 async def amireallyalive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
+    uptime = await get_readable_time((time.time() - StartTime))
     EMOJI = gvarstatus("ALIVE_EMOJI") or "✧✧"
     cod_caption = f"**Codex** `is Up and` __Running...__\n"
     cod_caption += f"=================================\n"
-    cod_caption += f"**{EMOJI}** `User :` **{mention}**\n"
+    cod_caption += f"{EMOJI} `User :` {mention}\n"
     cod_caption += f"`— — — — — >`\n"
-    cod_caption += f"**{EMOJI}** `Uptime :` __{uptime}__\n"
+    cod_caption += f"{EMOJI} `Uptime :` __{uptime}__\n"
     cod_caption += f"`— — — — — — — >`\n"
-    cod_caption += f"**{EMOJI}** `Codex    :` __v{codversion}__\n"
+    cod_caption += f"{EMOJI} `Codex    :` __v{codversion}__\n"
     cod_caption += f"`— — — — — — — — >`\n"
-    cod_caption += f"**{EMOJI}** `Telethon   :` __v{version.__version__}__\n"
+    cod_caption += f"{EMOJI} `Telethon   :` __v{version.__version__}__\n"
     cod_caption += f"`— — — — — — — — — — >`\n"
-    cod_caption += f"**{EMOJI}** `Python       :` __v{python_version()}__\n"
+    cod_caption += f"{EMOJI} `Python       :` __v{python_version()}__\n"
     cod_caption += f"=================================\n"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, cod_caption)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)

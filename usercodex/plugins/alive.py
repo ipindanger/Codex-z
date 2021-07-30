@@ -101,15 +101,12 @@ async def amireallyalive(event):
 async def amireallyalive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
-    uptime = await get_readable_time((time.time() - StartTime))
     EMOJI = gvarstatus("ALIVE_EMOJI") or "✧✧"
     cod_caption = f"**Codex** `is Up and` __Running...__\n"
     cod_caption += f"=================================\n"
     cod_caption += f"{EMOJI} `User :` {mention}\n"
-    cod_caption += f"`— — — — — >`\n"
-    cod_caption += f"{EMOJI} `Uptime :` __{uptime}__\n"
     cod_caption += f"`— — — — — — — >`\n"
-    cod_caption += f"{EMOJI} `Codex    :` __v{codversion}__\n"
+    cod_caption += f"{EMOJI} `Codex   :` __v{codversion}__\n"
     cod_caption += f"`— — — — — — — — >`\n"
     cod_caption += f"{EMOJI} `Telethon   :` __v{version.__version__}__\n"
     cod_caption += f"`— — — — — — — — — — >`\n"

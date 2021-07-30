@@ -251,7 +251,7 @@ async def inline_handler(event):  # sourcery no-metrics
     if query_user_id == Config.OWNER_ID or query_user_id in Config.SUDO_USERS:
         hmm = re.compile("secret (.*) (.*)")
         match = re.findall(hmm, query)
-        if query.startswith("**Codexuserbot"):
+        if query.startswith("**Codex"):
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),

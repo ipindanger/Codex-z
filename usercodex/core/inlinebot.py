@@ -30,7 +30,7 @@ from .logger import logging
 LOGS = logging.getLogger(__name__)
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-CODLOGO = "https://telegra.ph/file/d7b3f78a0082e60bc3ae6.jpg"
+CODLOGO = "https://telegra.ph/file/c6f5ed625c0fb1c2480f7.jpg"
 tr = Config.COMMAND_HAND_LER
 
 
@@ -53,8 +53,8 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"Codex Helper\
-        \nProvided by {mention}"
+    text = f"**Codex Helper**\
+        \n**Provided by** {mention}"
     buttons = [
         (
             Button.inline(

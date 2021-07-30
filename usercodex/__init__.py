@@ -7,7 +7,7 @@ from .core.logger import logging
 from .core.session import codex
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
-__version__ = "0.01"
+__version__ = "0.02"
 __license__ = "BSD-3-Clause License"
 __author__ = "Codex <https://github.com/Codex51/Codex>"
 __copyright__ = "Copyright (C) 2021, " + __author__
@@ -18,7 +18,7 @@ LOGS = logging.getLogger("CodexUserbot")
 bot = codex
 
 StartTime = time.time()
-codversion = "0.01"
+codversion = "0.02"
 
 if Config.UPSTREAM_REPO == "Codex":
     UPSTREAM_REPO_URL = "https://github.com/Codex51/Codex"

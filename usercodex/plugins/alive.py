@@ -101,7 +101,7 @@ async def amireallyalive(event):
 async def amireallyalive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "✧✧"
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "•"
     cod_caption = f"**Codex** `is Up and` __Running...__\n"
     cod_caption += f"=================================\n"
     cod_caption += f"{EMOJI} `User :` {mention}\n"

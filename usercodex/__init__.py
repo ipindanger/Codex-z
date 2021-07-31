@@ -9,19 +9,19 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "0.02"
 __license__ = "BSD-3-Clause License"
-__author__ = "Codex <https://github.com/Codex51/Codex>"
+__author__ = "Codex-z <https://github.com/ipindanger/Codex-z>"
 __copyright__ = "Copyright (C) 2021, " + __author__
 
 codex.version = __version__
 codex.tgbot.version = __version__
-LOGS = logging.getLogger("CodexUserbot")
+LOGS = logging.getLogger("Codex Clonebot")
 bot = codex
 
 StartTime = time.time()
 codversion = "0.02"
 
-if Config.UPSTREAM_REPO == "Codex":
-    UPSTREAM_REPO_URL = "https://github.com/Codex51/Codex"
+if Config.UPSTREAM_REPO == "Codex-z":
+    UPSTREAM_REPO_URL = "https://github.com/ipindanger/Codex-z"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 

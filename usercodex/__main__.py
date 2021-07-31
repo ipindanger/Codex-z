@@ -15,7 +15,7 @@ from .utils import (
     verifyLoggerGroup,
 )
 
-LOGS = logging.getLogger("CodexUserbot")
+LOGS = logging.getLogger("Codex-z Clonebot")
 
 print(usercodex.__copyright__)
 print("Licensed under the terms of the " + usercodex.__license__)
@@ -23,7 +23,7 @@ print("Licensed under the terms of the " + usercodex.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("Starting Userbot")
+    LOGS.info("Starting Clonebot")
     codex.loop.run_until_complete(setup_bot())
     LOGS.info("Telegram Bot Startup Completed")
 except Exception as e:
@@ -48,9 +48,9 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("========================================")
-    print("Okay, Codex is Officially Working.!!!")
+    print("Okay, Codex-z is Officially Working.!!!")
     print(
-        f"Now type {cmdhr}alive to see message if codex is live\
+        f"Now type {cmdhr}alive to see message if CloneCz is live\
         \nIf you need assistance."
     )
     print("========================================")

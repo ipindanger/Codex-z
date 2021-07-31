@@ -1,13 +1,13 @@
 {
   "name": "CODEX",
   "description": "A simple Telegram userbot based on Telethon.",
-  "logo": "https://telegra.ph/file/3aaf9215b5f9e1ebb8144.jpg",
+  "logo": "https://telegra.ph/file/21c1191b03e5dbbfdbf66.jpg",
   "keywords": [
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Codex51/Codex/",
+  "repository": "https://github.com/ipindanger/Codex-z/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -57,7 +57,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "if you need custom deploy then type your git repo link",
-      "value": "Codex",
+      "value": "Codex-z",
       "required": false
     }
   },

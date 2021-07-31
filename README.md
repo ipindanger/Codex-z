@@ -1,5 +1,5 @@
 <h1 align="center">
-<img alt="CodeXuser" height="260" width="100%" src="https://github.com/Codex51/Codex/raw/master/resources/photos/CodeXuser.jpg"
+<img alt="CodeXuser" height="260" width="100%" src="https://telegra.ph/file/21c1191b03e5dbbfdbf66.jpg"
    width="100" height="100"
    align="right">
 <br />
@@ -112,7 +112,7 @@
     <p> Deploy using heroku, and don't forget to register first. </p>
     <p>👇🏻 Click </p>
     <p align="left">
-       <a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FCodex51%2FCodex"><img src="https://img.shields.io/badge/deploy_to_heroku-white?style=for-the-badge&logo=heroku.cd" alt="go_heroku" /></a>
+       <a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fipindanger%2FCodex-z"><img src="https://img.shields.io/badge/deploy_to_heroku-white?style=for-the-badge&logo=heroku.cd" alt="go_heroku" /></a>
     </p>
   </details><br>
 

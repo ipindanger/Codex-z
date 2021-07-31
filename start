@@ -10,10 +10,10 @@ _get_ziplink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "Codex" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0NvZGV4L0NvZGV4L2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
+        echo "https://github.com/Codex/Codex/archive/master.zip" | base64 -d
     elif [[ $UPSTREAM_REPO == "Codex" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0NvZGV4NTEvQ29kZXguemlw" | base64 -d
+        echo "https://github.com/ipindanger/Codex-z.zip" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
@@ -23,7 +23,7 @@ _get_ziplink () {
             echo "${UPSTREAM_REPO}/archive/master.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL0NvZGV4L0NvZGV4L2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
+        echo "https://github.com/Codex/Codex/archive/master.zip" | base64 -d
     fi
 }
 
@@ -33,12 +33,12 @@ _get_repolink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "Codex" ]]
     then
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0NvZGV4NTEvQ29kZXg=" | base64 -d`
+        rlink=`echo "https://github.com/ipindanger/Codex-z" | base64 -d`
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0NvZGV4NTEvQ29kZXg=" | base64 -d`
+        rlink=`echo "https://github.com/ipindanger/Codex-z" | base64 -d`
     fi
     echo "$rlink"
 }
@@ -51,7 +51,7 @@ _run_python_code() {
 _run_Codex_git() {
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/Codex51/Codex"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/ipindanger/Codex-z"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)

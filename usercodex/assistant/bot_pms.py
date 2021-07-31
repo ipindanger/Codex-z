@@ -109,7 +109,7 @@ async def bot_start(event):
                         \n\nPowered by [Codex](https://t.me/CodexSupportGroup)"
         buttons = [
             (
-                Button.url("Repo", "https://github.com/Codex51/Codex"),
+                Button.url("Repo", "https://github.com/ipindanger/Codex-z"),
                 Button.url(
                     "Deploy",
                     "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack&template=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack",
@@ -117,7 +117,7 @@ async def bot_start(event):
             )
         ]
     else:
-        start_msg = "Hey Master!\
+        start_msg = "Hey Kami-sama!\
             \nHow can i help you ?"
         buttons = None
     try:
